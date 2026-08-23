@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Vies | PreziQuiz</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.page{
+max-width:500px;
+margin:auto;
+padding:50px 20px;
+text-align:center
+}
+
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:20px;
+padding:30px 20px
+}
+
+.heart{
+font-size:55px
+}
+
+h1{
+margin:12px 0
+}
+
+.sub{
+color:#888;
+font-size:12px
+}
+
+.lives{
+font-size:38px;
+margin:25px 0
+}
+
+.info{
+background:#191b24;
+padding:15px;
+border-radius:12px;
+color:#888;
+font-size:11px;
+line-height:1.6
+}
+
+.btn{
+display:block;
+margin-top:20px;
+padding:14px;
+background:#fff;
+color:#08090d;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<h1>Mes vies</h1>
+
+<p class="sub">
+Utilisez vos vies pour jouer aux quiz.
+</p>
+
+<div class="lives" id="lives">
+❤️ ❤️ ❤️
+</div>
+
+<div class="info">
+Vous avez 3 vies par défaut.
+<br>
+Les vies pourront être récupérées avec le temps.
+</div>
+
+<a href="categories.html" class="btn">
+🧠 Jouer maintenant
+</a>
+
+</div>
+
+</main>
+
+<script>
+
+let lives =
+Number(localStorage.getItem("preziQuizLives"));
+
+if(!lives){
+lives=3;
+localStorage.setItem(
+"preziQuizLives",
+lives
+);
+}
+
+document.getElementById("lives").textContent =
+"❤️ ".repeat(lives).trim();
+
+</script>
+
+</body>
+</html>
