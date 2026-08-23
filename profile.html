@@ -3,23 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Profil | Prezi Quiz</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Mon Profil | PreziQuiz</title>
+<link rel="stylesheet" href="style.css">
 
 <style>
-.profile{max-width:650px;margin:auto;padding:40px 20px}
-.card{background:#11131a;border:1px solid #242631;border-radius:18px;padding:25px;text-align:center}
-.avatar{width:85px;height:85px;margin:auto;border-radius:50%;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:35px}
-h2{margin:15px 0 5px}
-.sub{color:#888;font-size:12px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
-.stat{background:#191b24;padding:16px;border-radius:12px}
-.stat b{display:block;font-size:20px;color:#a78bfa}
-.stat span{font-size:10px;color:#888}
-.actions{margin-top:20px;display:grid;gap:10px}
-.btn{padding:13px;border-radius:10px;text-decoration:none;text-align:center;font-weight:bold}
-.play{background:#fff;color:#08090d}
-.rank{background:#1b1d26;color:#fff}
+.profile{
+max-width:650px;
+margin:auto;
+padding:30px 20px
+}
+
+.header{
+text-align:center;
+padding:25px 0
+}
+
+.avatar{
+width:75px;
+height:75px;
+margin:auto;
+border-radius:50%;
+background:#8b5cf6;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px
+}
+
+.header h2{
+margin:12px 0 5px
+}
+
+.header p{
+color:#888;
+font-size:11px
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.box{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:14px;
+padding:18px
+}
+
+.box b{
+display:block;
+font-size:21px;
+color:#a78bfa
+}
+
+.box span{
+font-size:10px;
+color:#888
+}
+
+.menu{
+margin-top:15px
+}
+
+.item{
+display:block;
+padding:16px;
+margin:8px 0;
+background:#11131a;
+border:1px solid #292c38;
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-size:13px
+}
+
+.item span{
+float:right;
+color:#777
+}
+
+.play{
+display:block;
+text-align:center;
+padding:14px;
+margin-top:20px;
+border-radius:10px;
+background:white;
+color:#08090d;
+text-decoration:none;
+font-weight:bold
+}
 </style>
 </head>
 
@@ -27,48 +102,108 @@ h2{margin:15px 0 5px}
 
 <main class="profile">
 
-<div class="card">
+<section class="header">
 
 <div class="avatar">👤</div>
 
-<h2>Joueur</h2>
+<h2 id="name">Joueur</h2>
 
-<p class="sub">Membre de Prezi Quiz</p>
+<p>Membre de PreziQuiz 🌍</p>
 
-<div class="stats">
+</section>
 
-<div class="stat">
-<b>0</b>
-<span>Points</span>
+<section class="stats">
+
+<div class="box">
+<b id="points">0</b>
+<span>🏆 Points</span>
 </div>
 
-<div class="stat">
-<b>0</b>
-<span>Quiz joués</span>
+<div class="box">
+<b id="streak">0</b>
+<span>🔥 Streak</span>
 </div>
 
-<div class="stat">
-<b>0%</b>
-<span>Réussite</span>
+<div class="box">
+<b id="lives">3</b>
+<span>❤️ Vies</span>
 </div>
 
+<div class="box">
+<b>Niveau 1</b>
+<span>🎮 Progression</span>
 </div>
 
-<div class="actions">
+</section>
 
-<a href="categories.html" class="btn play">
+<section class="menu">
+
+<a class="item" href="badges.html">
+🏅 Mes Badges
+<span>→</span>
+</a>
+
+<a class="item" href="rewards.html">
+🎁 Récompenses
+<span>→</span>
+</a>
+
+<a class="item" href="stats.html">
+📊 Statistiques
+<span>→</span>
+</a>
+
+<a class="item" href="history.html">
+📜 Historique
+<span>→</span>
+</a>
+
+<a class="item" href="leaderboard.html">
+🏆 Classement
+<span>→</span>
+</a>
+
+</section>
+
+<a href="categories.html" class="play">
 🧠 Jouer maintenant
 </a>
 
-<a href="leaderboard.html" class="btn rank">
-🏆 Voir le classement
-</a>
-
-</div>
-
-</div>
-
 </main>
+
+<script>
+
+const user=
+JSON.parse(
+localStorage.getItem("preziQuizUser")
+);
+
+if(user){
+
+document.getElementById("name")
+.textContent=user.name||"Joueur";
+
+}
+
+document.getElementById("points")
+.textContent=
+Number(
+localStorage.getItem("preziQuizPoints")
+)||0;
+
+document.getElementById("streak")
+.textContent=
+Number(
+localStorage.getItem("preziQuizStreak")
+)||0;
+
+document.getElementById("lives")
+.textContent=
+Number(
+localStorage.getItem("preziQuizLives")
+)||3;
+
+</script>
 
 </body>
 </html>
