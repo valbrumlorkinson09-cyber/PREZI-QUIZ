@@ -1,151 +1,437 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
 <title>Résultat | PreziQuiz</title>
-<link rel="stylesheet" href="css/style.css">
 
 <style>
-.result{
-max-width:500px;
-margin:auto;
-padding:50px 20px;
-text-align:center
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
+
+body{
+background:#08090d;
+color:#fff;
+font-family:Arial,sans-serif;
+min-height:100vh;
+}
+
+.result{
+width:100%;
+max-width:550px;
+margin:auto;
+padding:25px 16px 40px;
+}
+
+.logo{
+text-align:center;
+font-size:21px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+.logo span{
+color:#8b5cf6;
+}
+
 .card{
 background:#11131a;
 border:1px solid #292c38;
 border-radius:20px;
-padding:30px 20px
+padding:28px 18px;
+text-align:center;
 }
-.icon{font-size:55px}
-h1{margin:12px 0 5px}
-.sub{color:#888;font-size:12px}
-.score{
+
+.icon{
 font-size:55px;
-font-weight:bold;
-color:#a78bfa;
-margin:20px 0 5px
+margin-bottom:10px;
 }
+
+h1{
+font-size:25px;
+margin-bottom:8px;
+}
+
+.subtitle{
+color:#888;
+font-size:12px;
+line-height:1.6;
+}
+
+.score{
+font-size:58px;
+font-weight:900;
+color:#a78bfa;
+margin:22px 0 5px;
+}
+
 .points{
 color:#22c55e;
-font-weight:bold
+font-size:14px;
+font-weight:bold;
 }
-.info{
+
+.stats{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px;
-margin-top:25px
+margin-top:25px;
 }
-.box{
+
+.stat{
 background:#191b24;
-padding:15px;
-border-radius:12px
+border-radius:13px;
+padding:18px 10px;
 }
-.box b{
+
+.stat b{
 display:block;
-font-size:20px
+font-size:23px;
+margin-bottom:6px;
 }
-.box span{
+
+.stat span{
 color:#888;
-font-size:10px
+font-size:10px;
 }
-.btn{
-display:block;
-margin-top:20px;
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.streak{
+margin-top:12px;
+background:#191b24;
+border-radius:13px;
+padding:17px;
+}
+
+.streak b{
+color:#f97316;
+}
+
+.buttons{
+margin-top:22px;
+display:grid;
+gap:10px;
+}
+
+button,
+a{
+width:100%;
 padding:14px;
-border-radius:10px;
+border-radius:11px;
+font-size:13px;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
 text-decoration:none;
-font-weight:bold
 }
+
 .play{
 background:#fff;
-color:#08090d
+color:#08090d;
+border:0;
 }
-.share{
+
+.profile{
 background:#191b24;
-color:#fff
+color:#fff;
+border:1px solid #292c38;
 }
+
+.share{
+background:#25D366;
+color:#fff;
+border:0;
+}
+
+.message{
+margin-top:15px;
+color:#a78bfa;
+font-size:11px;
+min-height:15px;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
 <main class="result">
 
-<div class="card">
+<div class="logo">
+PREZI<span>QUIZ</span>
+</div>
 
-<div class="icon">🎉</div>
 
-<h1>Quiz terminé !</h1>
+<section class="card">
 
-<p class="sub">
-Bravo, voici votre résultat.
+<div class="icon">
+🎉
+</div>
+
+<h1>
+Quiz terminé !
+</h1>
+
+<p class="subtitle">
+Bravo ! Voici votre résultat.
 </p>
 
-<div class="score" id="score">0%</div>
 
-<div class="points" id="points">
+<div
+class="score"
+id="score"
+>
+0%
+</div>
+
+
+<div
+class="points"
+id="points"
+>
 +0 🏆 points
 </div>
 
-<section class="info">
 
-<div class="box">
-<b id="correct">0</b>
-<span>Bonnes réponses</span>
+<section class="stats">
+
+<div class="stat">
+
+<b
+class="correct"
+id="correct"
+>
+0
+</b>
+
+<span>
+Bonnes réponses
+</span>
+
 </div>
 
-<div class="box">
-<b id="wrong">0</b>
-<span>Mauvaises réponses</span>
+
+<div class="stat">
+
+<b
+class="wrong"
+id="wrong"
+>
+0
+</b>
+
+<span>
+Mauvaises réponses
+</span>
+
 </div>
 
 </section>
 
-<a href="categories.html" class="btn play">
-🧠 Rejouer
-</a>
 
-<a href="share.html" class="btn share">
-📲 Partager mon résultat
-</a>
+<div class="streak">
+
+🔥 Série actuelle :
+<b id="streak">
+0
+</b>
 
 </div>
 
+
+<div class="buttons">
+
+<a
+href="categories.html"
+class="play"
+>
+🧠 Rejouer
+</a>
+
+
+<a
+href="profile.html"
+class="profile"
+>
+👤 Mon Profil
+</a>
+
+
+<button
+class="share"
+onclick="shareResult()"
+>
+📲 Partager mon résultat
+</button>
+
+</div>
+
+
+<div
+class="message"
+id="message"
+></div>
+
+</section>
+
 </main>
+
 
 <script>
 
+/* =========================
+   RECUPERER LE SCORE
+========================= */
+
 const score =
-Number(localStorage.getItem("preziQuizScore")) || 0;
+Number(
+localStorage.getItem(
+"preziQuizScore"
+)
+) || 0;
+
+
+/* =========================
+   CALCUL
+========================= */
 
 const total = 5;
 
-const percent =
-Math.round((score / total) * 100);
+const percentage =
+Math.round(
+(score / total) * 100
+);
 
-const points = score * 100;
+const points =
+score * 100;
 
-document.getElementById("score")
-.textContent = percent + "%";
+const wrong =
+total - score;
 
-document.getElementById("points")
-.textContent = "+" + points + " 🏆 points";
 
-document.getElementById("correct")
-.textContent = score;
+/* =========================
+   AFFICHAGE
+========================= */
 
-document.getElementById("wrong")
-.textContent = total - score;
+document.getElementById(
+"score"
+).textContent =
+percentage + "%";
+
+
+document.getElementById(
+"points"
+).textContent =
+"+" + points + " 🏆 points";
+
+
+document.getElementById(
+"correct"
+).textContent =
+score;
+
+
+document.getElementById(
+"wrong"
+).textContent =
+wrong;
+
+
+/* =========================
+   STREAK
+========================= */
+
+let streak =
+Number(
+localStorage.getItem(
+"preziQuizStreak"
+)
+) || 0;
+
+
+/*
+Si le joueur obtient
+au moins une bonne réponse,
+on augmente la série.
+*/
+
+if(score > 0){
+
+streak++;
 
 localStorage.setItem(
-"preziQuizPoints",
-points
+"preziQuizStreak",
+streak
 );
+
+}
+
+document.getElementById(
+"streak"
+).textContent =
+streak;
+
+
+/* =========================
+   PARTAGE
+========================= */
+
+function shareResult(){
+
+const text =
+"🎉 J'ai obtenu "
++
+percentage
++
+"% sur PreziQuiz ! 🧠🔥 "
++
+"J'ai gagné "
++
+points
++
+" points. À ton tour !";
+
+
+const whatsapp =
+"https://wa.me/?text="
++
+encodeURIComponent(text);
+
+
+window.open(
+whatsapp,
+"_blank"
+);
+
+document.getElementById(
+"message"
+).textContent =
+"Résultat prêt à partager ! 📲";
+
+}
 
 </script>
 
 </body>
+
 </html>
