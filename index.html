@@ -2,76 +2,39 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Prezi Quiz</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.home{
-max-width:700px;
-margin:auto;
-padding:50px 20px;
-text-align:center
-}
-.logo{
-font-size:28px;
-font-weight:bold
-}
-.logo span{color:#8b5cf6}
-h1{
-font-size:42px;
-margin:25px 0 10px
-}
-p{
-color:#888;
-font-size:13px;
-line-height:1.6
-}
-.play{
-display:block;
-margin:25px auto;
-max-width:350px;
-padding:15px;
-border-radius:11px;
-background:#fff;
-color:#08090d;
-text-decoration:none;
-font-weight:bold
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-margin-top:25px
-}
-.box{
-background:#11131a;
-border:1px solid #292c38;
-border-radius:14px;
-padding:20px
-}
-.box b{
-display:block;
-font-size:13px;
-margin-top:7px
-}
-.box span{
-font-size:10px;
-color:#777
-}
-</style>
+<title>PreziQuiz — Testez votre esprit</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<main class="home">
+<header class="header">
 
 <div class="logo">
 PREZI<span>QUIZ</span>
 </div>
 
+<a href="login.html" class="login-btn">
+Connexion
+</a>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+<div class="hero-badge">
+🌍 QUIZ MONDIAL
+</div>
+
 <h1>
-Testez votre esprit 🧠
+Testez votre<br>
+<span>esprit 🧠</span>
 </h1>
 
 <p>
@@ -79,39 +42,107 @@ Jouez, gagnez des points, débloquez des badges
 et défiez des joueurs du monde entier.
 </p>
 
-<a href="categories.html" class="play">
+<a href="categories.html" class="main-btn">
 🎯 Commencer un Quiz
-</a>
-
-<section class="grid">
-
-<a href="daily.html" class="box">
-🔥
-<b>Défi du jour</b>
-<span>Un nouveau défi chaque jour</span>
-</a>
-
-<a href="leaderboard.html" class="box">
-🏆
-<b>Classement</b>
-<span>Comparez votre score</span>
-</a>
-
-<a href="rewards.html" class="box">
-🎁
-<b>Récompenses</b>
-<span>Débloquez des bonus</span>
-</a>
-
-<a href="profile.html" class="box">
-👤
-<b>Mon Profil</b>
-<span>Suivez votre progression</span>
 </a>
 
 </section>
 
+
+<section class="features">
+
+<a href="daily.html" class="feature">
+
+<div class="feature-icon">
+🔥
+</div>
+
+<div>
+<b>Défi du jour</b>
+<span>Un nouveau défi chaque jour</span>
+</div>
+
+</a>
+
+
+<a href="leaderboard.html" class="feature">
+
+<div class="feature-icon">
+🏆
+</div>
+
+<div>
+<b>Classement</b>
+<span>Comparez votre score</span>
+</div>
+
+</a>
+
+
+<a href="rewards.html" class="feature">
+
+<div class="feature-icon">
+🎁
+</div>
+
+<div>
+<b>Récompenses</b>
+<span>Débloquez des bonus</span>
+</div>
+
+</a>
+
+
+<a href="profile.html" class="feature">
+
+<div class="feature-icon">
+👤
+</div>
+
+<div>
+<b>Mon Profil</b>
+<span>Suivez votre progression</span>
+</div>
+
+</a>
+
+</section>
+
+
+<section class="stats-home">
+
+<div>
+<strong>10K+</strong>
+<span>Questions</span>
+</div>
+
+<div>
+<strong>100+</strong>
+<span>Pays</span>
+</div>
+
+<div>
+<strong>∞</strong>
+<span>Défis</span>
+</div>
+
+</section>
+
 </main>
+
+
+<footer>
+
+<p>© 2026 PreziQuiz</p>
+
+<p>
+Testez vos connaissances. Dépassez vos limites.
+</p>
+
+</footer>
+
+
+<script src="js/data.js"></script>
 
 </body>
 </html>
