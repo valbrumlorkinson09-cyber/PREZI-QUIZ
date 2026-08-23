@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Statistiques | Prezi Quiz</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.stats{
+max-width:600px;
+margin:auto;
+padding:40px 20px
+}
+
+h2{text-align:center}
+.sub{
+text-align:center;
+color:#888;
+font-size:12px;
+margin-bottom:25px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px
+}
+
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:15px;
+padding:20px;
+text-align:center
+}
+
+.card b{
+display:block;
+font-size:25px;
+color:#a78bfa
+}
+
+.card span{
+color:#888;
+font-size:10px
+}
+
+.accuracy{
+margin-top:12px;
+padding:20px;
+background:#11131a;
+border-radius:15px;
+border:1px solid #292c38;
+text-align:center
+}
+
+.bar{
+height:8px;
+background:#22242d;
+border-radius:10px;
+margin-top:12px;
+overflow:hidden
+}
+
+.fill{
+width:82%;
+height:100%;
+background:#8b5cf6
+}
+
+.btn{
+display:block;
+margin-top:20px;
+padding:14px;
+background:#fff;
+color:#08090d;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+font-weight:bold
+}
+</style>
+</head>
+
+<body>
+
+<main class="stats">
+
+<h2>📈 Mes Statistiques</h2>
+
+<p class="sub">
+Suivez votre progression sur Prezi Quiz.
+</p>
+
+<section class="grid">
+
+<div class="card">
+<b>0</b>
+<span>Quiz joués</span>
+</div>
+
+<div class="card">
+<b>0</b>
+<span>Points gagnés</span>
+</div>
+
+<div class="card">
+<b>0%</b>
+<span>Taux de réussite</span>
+</div>
+
+<div class="card">
+<b>0</b>
+<span>Réponses correctes</span>
+</div>
+
+</section>
+
+<div class="accuracy">
+
+<b>Progression</b>
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+
+<p class="sub">
+Continuez à jouer pour améliorer vos statistiques.
+</p>
+
+</div>
+
+<a href="categories.html" class="btn">
+🧠 Jouer maintenant
+</a>
+
+</main>
+
+</body>
+</html>
