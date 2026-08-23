@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Streak | Prezi Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.streak{
+max-width:500px;
+margin:auto;
+padding:50px 20px
+}
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:20px;
+padding:30px 20px;
+text-align:center
+}
+.fire{font-size:60px}
+h2{margin:10px 0}
+.number{
+font-size:55px;
+font-weight:bold;
+color:#a78bfa;
+margin:20px 0 5px
+}
+.label{color:#888;font-size:11px}
+.info{
+margin-top:25px;
+padding:15px;
+background:#191b24;
+border-radius:12px;
+color:#999;
+font-size:11px
+}
+.btn{
+display:block;
+margin-top:18px;
+padding:14px;
+border-radius:10px;
+background:#fff;
+color:#08090d;
+text-decoration:none;
+font-weight:bold
+}
+</style>
+</head>
+
+<body>
+
+<main class="streak">
+
+<div class="card">
+
+<div class="fire">🔥</div>
+
+<h2>Votre Streak</h2>
+
+<div class="number" id="streak">0</div>
+
+<div class="label">
+JOURS CONSÉCUTIFS
+</div>
+
+<div class="info">
+🔥 Jouez chaque jour pour conserver votre streak.
+<br><br>
+🏆 Plus votre streak augmente, plus vous pourrez
+débloquer des récompenses.
+</div>
+
+<a href="daily.html" class="btn">
+🔥 Faire le défi du jour
+</a>
+
+</div>
+
+</main>
+
+<script>
+const streak =
+localStorage.getItem("preziQuizStreak") || 0;
+
+document.getElementById("streak").textContent =
+streak;
+</script>
+
+</body>
+</html>
