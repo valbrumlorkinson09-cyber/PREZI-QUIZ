@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Défi | Prezi Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.challenge{
+max-width:500px;
+margin:auto;
+padding:45px 20px
+}
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:18px;
+padding:25px;
+text-align:center
+}
+.icon{font-size:50px}
+h2{margin:12px 0}
+p{color:#888;font-size:12px;line-height:1.6}
+input{
+width:100%;
+box-sizing:border-box;
+padding:13px;
+margin-top:15px;
+border-radius:10px;
+border:1px solid #292c38;
+background:#191b24;
+color:white
+}
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:0;
+border-radius:10px;
+background:#fff;
+font-weight:bold
+}
+#msg{
+color:#a78bfa;
+font-size:11px;
+margin-top:15px
+}
+</style>
+</head>
+
+<body>
+
+<main class="challenge">
+
+<div class="card">
+
+<div class="icon">⚔️</div>
+
+<h2>Défier un joueur</h2>
+
+<p>
+Invitez un ami et découvrez qui
+est le meilleur au quiz.
+</p>
+
+<input
+id="name"
+placeholder="Nom du joueur">
+
+<button onclick="challenge()">
+🔥 Lancer le défi
+</button>
+
+<div id="msg"></div>
+
+</div>
+
+</main>
+
+<script>
+function challenge(){
+
+const name =
+document.getElementById("name").value.trim();
+
+const msg =
+document.getElementById("msg");
+
+if(!name){
+msg.textContent="Entrez le nom du joueur.";
+return;
+}
+
+msg.textContent=
+"Défi envoyé à "+name+" ⚔️";
+}
+</script>
+
+</body>
+</html>
