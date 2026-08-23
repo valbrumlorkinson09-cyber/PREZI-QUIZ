@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Résultat | PreziQuiz</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.result{
+max-width:500px;
+margin:auto;
+padding:50px 20px;
+text-align:center
+}
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:20px;
+padding:30px 20px
+}
+.icon{font-size:55px}
+h1{margin:12px 0 5px}
+.sub{color:#888;font-size:12px}
+.score{
+font-size:55px;
+font-weight:bold;
+color:#a78bfa;
+margin:20px 0 5px
+}
+.points{
+color:#22c55e;
+font-weight:bold
+}
+.info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:25px
+}
+.box{
+background:#191b24;
+padding:15px;
+border-radius:12px
+}
+.box b{
+display:block;
+font-size:20px
+}
+.box span{
+color:#888;
+font-size:10px
+}
+.btn{
+display:block;
+margin-top:20px;
+padding:14px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold
+}
+.play{
+background:#fff;
+color:#08090d
+}
+.share{
+background:#191b24;
+color:#fff
+}
+</style>
+</head>
+
+<body>
+
+<main class="result">
+
+<div class="card">
+
+<div class="icon">🎉</div>
+
+<h1>Quiz terminé !</h1>
+
+<p class="sub">
+Bravo, voici votre résultat.
+</p>
+
+<div class="score" id="score">0%</div>
+
+<div class="points" id="points">
++0 🏆 points
+</div>
+
+<section class="info">
+
+<div class="box">
+<b id="correct">0</b>
+<span>Bonnes réponses</span>
+</div>
+
+<div class="box">
+<b id="wrong">0</b>
+<span>Mauvaises réponses</span>
+</div>
+
+</section>
+
+<a href="categories.html" class="btn play">
+🧠 Rejouer
+</a>
+
+<a href="share.html" class="btn share">
+📲 Partager mon résultat
+</a>
+
+</div>
+
+</main>
+
+<script>
+
+const score =
+Number(localStorage.getItem("preziQuizScore")) || 0;
+
+const total = 5;
+
+const percent =
+Math.round((score / total) * 100);
+
+const points = score * 100;
+
+document.getElementById("score")
+.textContent = percent + "%";
+
+document.getElementById("points")
+.textContent = "+" + points + " 🏆 points";
+
+document.getElementById("correct")
+.textContent = score;
+
+document.getElementById("wrong")
+.textContent = total - score;
+
+localStorage.setItem(
+"preziQuizPoints",
+points
+);
+
+</script>
+
+</body>
+</html>
