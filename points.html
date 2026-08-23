@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Points | Prezi Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.points-page{
+max-width:600px;
+margin:auto;
+padding:40px 20px
+}
+.card{
+background:#11131a;
+border:1px solid #252733;
+border-radius:18px;
+padding:25px;
+text-align:center
+}
+.icon{font-size:45px}
+h2{margin:12px 0 5px}
+.balance{
+font-size:42px;
+font-weight:bold;
+color:#a78bfa;
+margin:20px 0
+}
+.info{
+background:#191b24;
+padding:15px;
+border-radius:12px;
+margin-top:12px;
+text-align:left
+}
+.info b{display:block;margin-bottom:5px}
+.info span{
+color:#888;
+font-size:11px
+}
+.btn{
+display:block;
+margin-top:20px;
+padding:13px;
+border-radius:10px;
+background:#fff;
+color:#08090d;
+text-decoration:none;
+font-weight:bold
+}
+</style>
+</head>
+
+<body>
+
+<main class="points-page">
+
+<div class="card">
+
+<div class="icon">🏆</div>
+
+<h2>Mes Points</h2>
+
+<p>Votre solde actuel</p>
+
+<div class="balance" id="points">
+0
+</div>
+
+<div class="info">
+<b>🎯 Comment gagner des points ?</b>
+<span>
+Répondez correctement aux questions
+et améliorez votre classement.
+</span>
+</div>
+
+<div class="info">
+<b>🔥 Défi quotidien</b>
+<span>
+Jouez régulièrement pour augmenter
+votre score et votre position.
+</span>
+</div>
+
+<a href="categories.html" class="btn">
+🧠 Jouer maintenant
+</a>
+
+</div>
+
+</main>
+
+<script>
+const points =
+Number(localStorage.getItem("preziQuizPoints")) || 0;
+
+document.getElementById("points")
+.textContent = points.toLocaleString("fr-FR");
+</script>
+
+</body>
+</html>
