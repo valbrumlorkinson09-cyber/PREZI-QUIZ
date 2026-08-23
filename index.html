@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prezi Quiz — Test Your Knowledge</title>
+
+    <meta
+        name="description"
+        content="Prezi Quiz is a global quiz platform for knowledge, sports, history, science, technology and more."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo-area">
+            <div class="logo-mark">P</div>
+
+            <div>
+                <h1>PREZI<span>QUIZ</span></h1>
+                <p>Challenge Your Mind</p>
+            </div>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         MOBILE MENU
+    ========================== -->
+
+    <nav class="mobile-menu" id="mobileMenu">
+
+        <a href="index.html" class="active">
+            🏠 Home
+        </a>
+
+        <a href="categories.html">
+            🧠 Categories
+        </a>
+
+        <a href="leaderboard.html">
+            🏆 Leaderboard
+        </a>
+
+        <a href="profile.html">
+            👤 Profile
+        </a>
+
+        <a href="login.html">
+            🔐 Login
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    🌍 GLOBAL QUIZ PLATFORM
+                </div>
+
+                <h2>
+                    Test Your
+                    <span>Knowledge.</span>
+                </h2>
+
+                <p>
+                    Challenge yourself with quizzes about
+                    football, science, history, technology,
+                    geography, movies and much more.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="categories.html" class="btn-primary">
+                        Start Quiz
+                        <span>→</span>
+                    </a>
+
+                    <a href="#categories" class="btn-secondary">
+                        Explore
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DAILY CHALLENGE -->
+
+        <section class="daily-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-title">
+                        DAILY CHALLENGE
+                    </span>
+
+                    <h2>
+                        Today's Quiz 🔥
+                    </h2>
+                </div>
+
+                <span class="streak">
+                    🔥 0 Day Streak
+                </span>
+
+            </div>
+
+
+            <div class="daily-card">
+
+                <div class="daily-icon">
+                    🧠
+                </div>
+
+                <div class="daily-info">
+
+                    <span class="difficulty">
+                        EASY
+                    </span>
+
+                    <h3>
+                        General Knowledge
+                    </h3>
+
+                    <p>
+                        10 questions • 5 minutes
+                    </p>
+
+                </div>
+
+                <a href="quiz.html" class="play-btn">
+                    ▶
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="categories-section" id="categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-title">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Quiz Categories
+                    </h2>
+                </div>
+
+                <a href="categories.html" class="view-all">
+                    View All →
+                </a>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <a href="quiz.html?category=general" class="category-card">
+
+                    <div class="category-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        General
+                    </h3>
+
+                    <p>
+                        Knowledge
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=sports" class="category-card">
+
+                    <div class="category-icon">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        Sports
+                    </h3>
+
+                    <p>
+                        Football & more
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=science" class="category-card">
+
+                    <div class="category-icon">
+                        🔬
+                    </div>
+
+                    <h3>
+                        Science
+                    </h3>
+
+                    <p>
+                        Discover
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=technology" class="category-card">
+
+                    <div class="category-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <p>
+                        Digital world
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=history" class="category-card">
+
+                    <div class="category-icon">
+                        🏛️
+                    </div>
+
+                    <h3>
+                        History
+                    </h3>
+
+                    <p>
+                        Past & events
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=geography" class="category-card">
+
+                    <div class="category-icon">
+                        🌎
+                    </div>
+
+                    <h3>
+                        Geography
+                    </h3>
+
+                    <p>
+                        World
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=movies" class="category-card">
+
+                    <div class="category-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Movies
+                    </h3>
+
+                    <p>
+                        Cinema
+                    </p>
+
+                </a>
+
+
+                <a href="quiz.html?category=music" class="category-card">
+
+                    <div class="category-icon">
+                        🎵
+                    </div>
+
+                    <h3>
+                        Music
+                    </h3>
+
+                    <p>
+                        Artists & songs
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY PREZI QUIZ -->
+
+        <section class="features-section">
+
+            <div class="section-heading centered">
+
+                <span class="small-title">
+                    PREZI QUIZ
+                </span>
+
+                <h2>
+                    Why Play?
+                </h2>
+
+            </div>
+
+
+            <div class="features-grid">
+
+
+                <div class="feature-card">
+
+                    <div>
+                        🏆
+                    </div>
+
+                    <h3>
+                        Compete
+                    </h3>
+
+                    <p>
+                        Challenge other players
+                        and climb the leaderboard.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div>
+                        🔥
+                    </div>
+
+                    <h3>
+                        Build Your Streak
+                    </h3>
+
+                    <p>
+                        Come back every day and
+                        keep your streak alive.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div>
+                        🌍
+                    </div>
+
+                    <h3>
+                        Go Global
+                    </h3>
+
+                    <p>
+                        Compete with quiz players
+                        from around the world.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            PREZI<span>QUIZ</span>
+        </div>
+
+        <p>
+            Challenge your mind. Discover more.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Prezi Quiz. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("show");
+
+        });
+
+    </script>
+
+</body>
+          </html>
