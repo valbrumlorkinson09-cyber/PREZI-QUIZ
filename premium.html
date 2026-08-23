@@ -1,130 +1,274 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Premium | Prezi Quiz</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
-<link rel="stylesheet" href="css/style.css">
+<title>Premium | PreziQuiz</title>
 
 <style>
-.premium{
-max-width:600px;
-margin:auto;
-padding:45px 20px
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-.card{
-background:#11131a;
-border:1px solid #292c38;
-border-radius:20px;
-padding:30px 22px;
-text-align:center
+body{
+background:#08090d;
+color:#fff;
+font-family:Arial,sans-serif;
+min-height:100vh;
+}
+
+.page{
+max-width:650px;
+margin:auto;
+padding:30px 16px 50px;
+}
+
+.logo{
+text-align:center;
+font-size:22px;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.logo span{
+color:#a78bfa;
+}
+
+.hero{
+text-align:center;
+padding:25px 10px;
 }
 
 .icon{
-font-size:45px
+font-size:55px;
+margin-bottom:15px;
 }
 
-h2{
+h1{
 font-size:30px;
-margin:12px 0
 }
 
-.sub{
+.hero p{
 color:#888;
 font-size:12px;
-line-height:1.6
+line-height:1.7;
+margin-top:10px;
+}
+
+.plan{
+margin-top:25px;
+background:#11131a;
+border:1px solid #8b5cf6;
+border-radius:20px;
+padding:25px 20px;
+}
+
+.plan-title{
+text-align:center;
+font-size:20px;
+font-weight:bold;
 }
 
 .price{
-font-size:38px;
-font-weight:bold;
+text-align:center;
+font-size:42px;
+font-weight:900;
 color:#a78bfa;
-margin:25px 0 5px
+margin:15px 0;
 }
 
 .price small{
 font-size:12px;
-color:#888
+color:#777;
+font-weight:normal;
 }
 
 .features{
-text-align:left;
-margin-top:25px
+list-style:none;
+margin-top:20px;
 }
 
-.features p{
-background:#191b24;
-padding:13px;
-border-radius:10px;
-font-size:12px
+.features li{
+padding:12px 0;
+border-bottom:1px solid #22242d;
+font-size:12px;
 }
 
-button{
+.features li:last-child{
+border-bottom:0;
+}
+
+.button{
+display:block;
 width:100%;
-padding:14px;
-margin-top:15px;
+padding:15px;
+margin-top:22px;
 border:0;
-border-radius:10px;
+border-radius:11px;
 background:#fff;
+color:#08090d;
 font-weight:bold;
-cursor:pointer
+font-size:13px;
+cursor:pointer;
 }
 
 .note{
+text-align:center;
 color:#666;
 font-size:9px;
-margin-top:12px
+line-height:1.6;
+margin-top:15px;
 }
+
+.message{
+text-align:center;
+color:#a78bfa;
+font-size:11px;
+margin-top:15px;
+min-height:16px;
+}
+
+.back{
+display:block;
+text-align:center;
+margin-top:20px;
+color:#888;
+font-size:11px;
+text-decoration:none;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<main class="premium">
+<main class="page">
 
-<div class="card">
+<div class="logo">
+PREZI<span>QUIZ</span>
+</div>
 
-<div class="icon">👑</div>
 
-<h2>Prezi Quiz Premium</h2>
+<section class="hero">
 
-<p class="sub">
+<div class="icon">
+💎
+</div>
+
+<h1>
+PreziQuiz Premium
+</h1>
+
+<p>
 Débloquez une meilleure expérience
-et profitez de fonctionnalités exclusives.
+et profitez pleinement de vos quiz.
 </p>
 
+</section>
+
+
+<section class="plan">
+
+<div class="plan-title">
+PREMIUM
+</div>
+
+
 <div class="price">
-$2.99 <small>/ mois</small>
+$4.99
+<small>/ mois</small>
 </div>
 
-<div class="features">
 
-<p>🚫 Moins de publicités</p>
+<ul class="features">
 
-<p>🔥 Défis Premium</p>
+<li>
+♾️ Quiz sans limite
+</li>
 
-<p>🏆 Bonus de points</p>
+<li>
+🚫 Expérience sans publicité
+</li>
 
-<p>📊 Statistiques avancées</p>
+<li>
+❤️ Vies supplémentaires
+</li>
 
-<p>👑 Badge Premium</p>
+<li>
+🎯 Quiz exclusifs
+</li>
 
-</div>
+<li>
+🏆 Bonus de points
+</li>
 
-<button onclick="alert('Paiement bientôt disponible 🚀')">
-Devenir Premium
+<li>
+🏅 Badges Premium
+</li>
+
+<li>
+⚡ Accès aux nouveaux défis
+</li>
+
+</ul>
+
+
+<button
+class="button"
+onclick="activatePremium()"
+>
+💎 Choisir Premium
 </button>
 
-<div class="note">
-Paiement sécurisé — bientôt disponible
-</div>
 
-</div>
+<div
+class="message"
+id="message"
+></div>
+
+
+<p class="note">
+Le paiement sera connecté au système
+de paiement officiel avant le lancement.
+</p>
+
+</section>
+
+
+<a
+href="index.html"
+class="back"
+>
+← Retour à PreziQuiz
+</a>
 
 </main>
 
+
+<script>
+
+function activatePremium(){
+
+const message =
+document.getElementById("message");
+
+message.textContent =
+"Premium sera disponible après la configuration du paiement. 💎";
+
+}
+
+</script>
+
 </body>
+
 </html>
