@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Difficulté | PreziQuiz</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 .page{
@@ -15,6 +15,7 @@ padding:40px 20px
 }
 
 h1{text-align:center}
+
 .sub{
 text-align:center;
 color:#888;
@@ -24,32 +25,26 @@ margin-bottom:25px
 
 .level{
 display:block;
+padding:22px;
+margin:12px 0;
+border-radius:16px;
 background:#11131a;
 border:1px solid #292c38;
-border-radius:16px;
-padding:20px;
-margin:12px 0;
-text-decoration:none;
-color:#fff
+color:white;
+text-decoration:none
 }
-
-.icon{font-size:30px}
 
 .level b{
 display:block;
-margin-top:8px
+font-size:15px
 }
 
 .level span{
 display:block;
 color:#888;
 font-size:10px;
-margin-top:5px
+margin-top:6px
 }
-
-.easy{border-color:#22c55e}
-.medium{border-color:#eab308}
-.hard{border-color:#ef4444}
 </style>
 </head>
 
@@ -57,36 +52,36 @@ margin-top:5px
 
 <main class="page">
 
-<h1>🎯 Difficulté</h1>
+<h1>🎯 Choisir la difficulté</h1>
 
 <p class="sub">
-Choisissez votre niveau avant de commencer.
+Préparez-vous avant de commencer.
 </p>
 
-<a class="level easy"
-href="categories.html?difficulty=easy">
+<a class="level"
+href="quiz.html?cat=culture&difficulty=easy">
 
-<div class="icon">🟢</div>
+🟢
 <b>Facile</b>
-<span>Questions pour débuter</span>
+<span>Pour commencer tranquillement</span>
 
 </a>
 
-<a class="level medium"
-href="categories.html?difficulty=medium">
+<a class="level"
+href="quiz.html?cat=culture&difficulty=medium">
 
-<div class="icon">🟡</div>
+🟡
 <b>Moyen</b>
-<span>Un vrai défi pour vos connaissances</span>
+<span>Un niveau plus compétitif</span>
 
 </a>
 
-<a class="level hard"
-href="categories.html?difficulty=hard">
+<a class="level"
+href="quiz.html?cat=culture&difficulty=hard">
 
-<div class="icon">🔴</div>
+🔴
 <b>Difficile</b>
-<span>Réservé aux meilleurs joueurs</span>
+<span>Pour les meilleurs joueurs</span>
 
 </a>
 
