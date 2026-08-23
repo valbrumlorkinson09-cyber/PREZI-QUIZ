@@ -1,93 +1,290 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
 <title>Catégories | PreziQuiz</title>
-<link rel="stylesheet" href="css/style.css">
 
 <style>
-.categories{max-width:700px;margin:auto;padding:35px 20px}
-h1{text-align:center;margin-bottom:8px}
-.sub{text-align:center;color:#888;font-size:12px;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.card{
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+background:#08090d;
+color:#fff;
+font-family:Arial,sans-serif;
+min-height:100vh;
+}
+
+.page{
+max-width:650px;
+margin:auto;
+padding:25px 16px 45px;
+}
+
+.header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:25px;
+}
+
+.logo{
+font-size:21px;
+font-weight:900;
+}
+
+.logo span{
+color:#8b5cf6;
+}
+
+.back{
+color:#888;
+font-size:11px;
+text-decoration:none;
+}
+
+h1{
+font-size:27px;
+margin-bottom:7px;
+}
+
+.subtitle{
+color:#777;
+font-size:11px;
+margin-bottom:25px;
+}
+
+.categories{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.category{
+display:block;
 background:#11131a;
 border:1px solid #292c38;
-border-radius:16px;
+border-radius:17px;
 padding:22px 15px;
 text-decoration:none;
-color:#fff
+color:#fff;
+transition:.2s;
 }
-.icon{font-size:32px}
-.card b{display:block;margin-top:10px}
-.card span{display:block;color:#777;font-size:10px;margin-top:5px}
+
+.category:active{
+transform:scale(.97);
+}
+
+.icon{
+font-size:32px;
+margin-bottom:13px;
+}
+
+.category b{
+display:block;
+font-size:13px;
+}
+
+.category span{
+display:block;
+color:#777;
+font-size:9px;
+margin-top:6px;
+}
+
+@media(max-width:420px){
+
+.categories{
+grid-template-columns:1fr;
+}
+
+.category{
+padding:18px;
+}
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<main class="categories">
+<main class="page">
 
-<h1>🧠 Catégories</h1>
+<header class="header">
 
-<p class="sub">
-Choisissez un thème et testez vos connaissances.
+<div class="logo">
+PREZI<span>QUIZ</span>
+</div>
+
+<a
+href="index.html"
+class="back"
+>
+← Accueil
+</a>
+
+</header>
+
+
+<h1>
+Choisissez une catégorie 🧠
+</h1>
+
+<p class="subtitle">
+Chaque catégorie possède ses propres questions.
 </p>
 
-<section class="grid">
 
-<a class="card" href="quiz.html?cat=culture">
-<div class="icon">🌍</div>
-<b>Culture Générale</b>
-<span>Testez vos connaissances</span>
-</a>
+<section class="categories">
 
-<a class="card" href="quiz.html?cat=football">
+
+<a
+class="category"
+href="quiz.html?category=football"
+>
+
 <div class="icon">⚽</div>
+
 <b>Football</b>
-<span>Défiez vos connaissances</span>
+
+<span>
+Sport et football
+</span>
+
 </a>
 
-<a class="card" href="quiz.html?cat=cinema">
-<div class="icon">🎬</div>
-<b>Cinéma</b>
-<span>Films et séries</span>
-</a>
 
-<a class="card" href="quiz.html?cat=musique">
-<div class="icon">🎵</div>
-<b>Musique</b>
-<span>Artistes et chansons</span>
-</a>
+<a
+class="category"
+href="quiz.html?category=science"
+>
 
-<a class="card" href="quiz.html?cat=science">
 <div class="icon">🔬</div>
+
 <b>Science</b>
-<span>Découvrez la science</span>
+
+<span>
+Sciences et découvertes
+</span>
+
 </a>
 
-<a class="card" href="quiz.html?cat=histoire">
+
+<a
+class="category"
+href="quiz.html?category=history"
+>
+
 <div class="icon">📚</div>
+
 <b>Histoire</b>
-<span>Testez votre mémoire</span>
+
+<span>
+Événements historiques
+</span>
+
 </a>
 
-<a class="card" href="quiz.html?cat=geographie">
-<div class="icon">🗺️</div>
+
+<a
+class="category"
+href="quiz.html?category=geography"
+>
+
+<div class="icon">🌍</div>
+
 <b>Géographie</b>
-<span>Explorez le monde</span>
+
+<span>
+Pays et monde
+</span>
+
 </a>
 
-<a class="card" href="quiz.html?cat=tech">
-<div class="icon">💻</div>
-<b>Technologie</b>
-<span>Digital et innovation</span>
+
+<a
+class="category"
+href="quiz.html?category=cinema"
+>
+
+<div class="icon">🎬</div>
+
+<b>Cinéma</b>
+
+<span>
+Films et séries
+</span>
+
 </a>
+
+
+<a
+class="category"
+href="quiz.html?category=music"
+>
+
+<div class="icon">🎵</div>
+
+<b>Musique</b>
+
+<span>
+Artistes et chansons
+</span>
+
+</a>
+
+
+<a
+class="category"
+href="quiz.html?category=technology"
+>
+
+<div class="icon">💻</div>
+
+<b>Technologie</b>
+
+<span>
+Tech et informatique
+</span>
+
+</a>
+
+
+<a
+class="category"
+href="quiz.html?category=culture"
+>
+
+<div class="icon">🌎</div>
+
+<b>Culture Générale</b>
+
+<span>
+Connaissances générales
+</span>
+
+</a>
+
 
 </section>
 
 </main>
 
 </body>
+
 </html>
