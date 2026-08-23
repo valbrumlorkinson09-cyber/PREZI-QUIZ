@@ -5,95 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Quiz | PreziQuiz</title>
-
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-.quiz{
-max-width:600px;
-margin:auto;
-padding:30px 20px
-}
-
-.top{
-display:flex;
-justify-content:space-between;
-color:#888;
-font-size:12px
-}
-
-.timer{
-color:#a78bfa;
-font-weight:bold
-}
-
-.progress{
-height:7px;
-background:#22242d;
-border-radius:10px;
-margin:20px 0;
-overflow:hidden
-}
-
-.bar{
-height:100%;
-width:20%;
-background:#8b5cf6
-}
-
-.card{
-background:#11131a;
-border:1px solid #292c38;
-border-radius:18px;
-padding:25px 20px
-}
-
-.question{
-font-size:21px;
-font-weight:bold;
-line-height:1.4
-}
-
-.answers{
-display:grid;
-gap:10px;
-margin-top:25px
-}
-
-.answer{
-padding:15px;
-border:1px solid #292c38;
-background:#191b24;
-color:#fff;
-border-radius:11px;
-text-align:left;
-cursor:pointer
-}
-
-.answer:hover{
-border-color:#8b5cf6
-}
-
-.answer.correct{
-border-color:#22c55e;
-background:#12301d
-}
-
-.answer.wrong{
-border-color:#ef4444;
-background:#351619
-}
-
-.next{
-width:100%;
-margin-top:20px;
-padding:14px;
-border:0;
-border-radius:10px;
-background:#fff;
-font-weight:bold;
-cursor:pointer
-}
+.quiz{max-width:600px;margin:auto;padding:30px 20px}
+.top{display:flex;justify-content:space-between;color:#888;font-size:12px}
+.timer{color:#a78bfa;font-weight:bold}
+.progress{height:7px;background:#22242d;border-radius:10px;margin:20px 0}
+.bar{height:100%;width:20%;background:#8b5cf6;border-radius:10px}
+.card{background:#11131a;border:1px solid #292c38;border-radius:18px;padding:25px 20px}
+.question{font-size:20px;font-weight:bold;line-height:1.4}
+.answers{display:grid;gap:10px;margin-top:25px}
+.answer{padding:15px;border:1px solid #292c38;background:#191b24;color:#fff;border-radius:11px;text-align:left}
+.correct{border-color:#22c55e!important}
+.wrong{border-color:#ef4444!important}
+.next{width:100%;margin-top:20px;padding:14px;border:0;border-radius:10px;background:#fff;font-weight:bold}
 </style>
 </head>
 
@@ -102,13 +28,8 @@ cursor:pointer
 <main class="quiz">
 
 <div class="top">
-
 <span id="count">Question 1/5</span>
-
-<span class="timer">
-⏱️ <span id="time">15</span>s
-</span>
-
+<span class="timer">⏱️ <span id="time">15</span>s</span>
 </div>
 
 <div class="progress">
@@ -117,9 +38,7 @@ cursor:pointer
 
 <div class="card">
 
-<div class="question" id="question">
-Chargement...
-</div>
+<div class="question" id="question"></div>
 
 <div class="answers" id="answers"></div>
 
@@ -133,39 +52,44 @@ Question suivante →
 
 <script>
 
-const questions = [
+const categories={
 
-{
-q:"Quelle est la capitale de la France ?",
-a:["Paris","Madrid","Rome","Berlin"],
-correct:0
-},
+culture:[
+["Quelle est la capitale de la France ?",["Paris","Rome","Madrid","Berlin"],0],
+["Combien de continents existe-t-il ?",["5","6","7","8"],2],
+["Quel est le plus grand océan ?",["Atlantique","Pacifique","Indien","Arctique"],1]
+],
 
-{
-q:"Combien de continents y a-t-il ?",
-a:["5","6","7","8"],
-correct:2
-},
+football:[
+["Combien de joueurs composent une équipe de football sur le terrain ?",["9","10","11","12"],2],
+["Quelle équipe a remporté la Coupe du monde 2022 ?",["France","Brésil","Argentine","Allemagne"],2],
+["Combien de minutes dure normalement un match ?",["60","80","90","120"],2]
+],
 
-{
-q:"Quelle planète est surnommée la planète rouge ?",
-a:["Venus","Mars","Jupiter","Mercure"],
-correct:1
-},
+science:[
+["Quelle planète est surnommée la planète rouge ?",["Mars","Vénus","Jupiter","Mercure"],0],
+["Quel organe pompe le sang ?",["Poumon","Cœur","Foie","Rein"],1],
+["Quelle est la formule de l'eau ?",["CO2","O2","H2O","NaCl"],2]
+],
 
-{
-q:"Combien font 5 × 5 ?",
-a:["15","20","25","30"],
-correct:2
-},
+cinema:[
+["Quel personnage est joué par Leonardo DiCaprio dans Titanic ?",["Jack","John","Mike","Tom"],0],
+["Quel film met en scène un sorcier nommé Harry ?",["Avatar","Harry Potter","Matrix","Titanic"],1],
+["Quel métier exerce un réalisateur ?",["Il dirige un film","Il chante","Il arbitre","Il cuisine"],0]
+],
 
-{
-q:"Quel océan est le plus grand ?",
-a:["Atlantique","Indien","Arctique","Pacifique"],
-correct:3
-}
+musique:[
+["Combien de cordes possède généralement une guitare ?",["4","5","6","8"],2],
+["Quel instrument possède des touches noires et blanches ?",["Batterie","Piano","Guitare","Trompette"],1],
+["Quel appareil permet d'écouter de la musique sans fil ?",["Microphone","Casque Bluetooth","Projecteur","Scanner"],1]
+]
 
-];
+};
+
+const params=new URLSearchParams(location.search);
+const category=params.get("cat")||"culture";
+
+const questions=categories[category]||categories.culture;
 
 let current=0;
 let score=0;
@@ -173,51 +97,37 @@ let selected=false;
 let time=15;
 let timer;
 
-const question =
-document.getElementById("question");
+const question=document.getElementById("question");
+const answers=document.getElementById("answers");
+const count=document.getElementById("count");
+const timeBox=document.getElementById("time");
+const bar=document.getElementById("bar");
 
-const answers =
-document.getElementById("answers");
-
-const count =
-document.getElementById("count");
-
-const timeBox =
-document.getElementById("time");
-
-const bar =
-document.getElementById("bar");
-
-function loadQuestion(){
+function load(){
 
 clearInterval(timer);
-
 selected=false;
 time=15;
 timeBox.textContent=time;
 
-const item=questions[current];
+const q=questions[current];
 
-question.textContent=item.q;
-
-count.textContent=
-`Question ${current+1}/${questions.length}`;
-
-bar.style.width=
-`${((current+1)/questions.length)*100}%`;
+question.textContent=q[0];
+count.textContent=`Question ${current+1}/${questions.length}`;
+bar.style.width=`${((current+1)/questions.length)*100}%`;
 
 answers.innerHTML="";
 
-item.a.forEach((answer,index)=>{
+q[1].forEach((text,i)=>{
 
-const button=document.createElement("button");
+const btn=document.createElement("button");
 
-button.className="answer";
-button.textContent=answer;
+btn.className="answer";
+btn.textContent=text;
 
-button.onclick=()=>selectAnswer(button,index);
+btn.onclick=()=>answer(btn,i);
 
-answers.appendChild(button);
+answers.appendChild(btn);
 
 });
 
@@ -227,47 +137,37 @@ time--;
 timeBox.textContent=time;
 
 if(time<=0){
-
 clearInterval(timer);
-
-if(!selected){
 selected=true;
-showCorrect();
-}
-
+correctAnswer();
 }
 
 },1000);
 
 }
 
-function selectAnswer(button,index){
+function answer(btn,index){
 
 if(selected)return;
 
 selected=true;
 clearInterval(timer);
 
-if(index===questions[current].correct){
-
-button.classList.add("correct");
+if(index===questions[current][2]){
+btn.classList.add("correct");
 score++;
-
 }else{
-
-button.classList.add("wrong");
-showCorrect();
-
+btn.classList.add("wrong");
+correctAnswer();
 }
 
 }
 
-function showCorrect(){
+function correctAnswer(){
 
-const buttons=
-document.querySelectorAll(".answer");
-
-buttons[questions[current].correct]
+document
+.querySelectorAll(".answer")
+[questions[current][2]]
 .classList.add("correct");
 
 }
@@ -280,22 +180,18 @@ current++;
 
 if(current>=questions.length){
 
-localStorage.setItem(
-"preziQuizScore",
-score
-);
+localStorage.setItem("preziQuizScore",score);
 
 window.location.href="result.html";
 
 return;
-
 }
 
-loadQuestion();
+load();
 
 };
 
-loadQuestion();
+load();
 
 </script>
 
