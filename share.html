@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Partager | Prezi Quiz</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.share{
+max-width:500px;
+margin:auto;
+padding:45px 20px
+}
+
+.card{
+background:#11131a;
+border:1px solid #292c38;
+border-radius:20px;
+padding:30px 20px;
+text-align:center
+}
+
+.icon{
+font-size:50px
+}
+
+h2{
+margin:12px 0
+}
+
+.score{
+font-size:45px;
+font-weight:bold;
+color:#a78bfa;
+margin:20px 0 5px
+}
+
+p{
+color:#888;
+font-size:12px
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:0;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer
+}
+
+.whatsapp{
+background:#25D366;
+color:white
+}
+
+.copy{
+background:#fff;
+color:#08090d
+}
+
+#msg{
+color:#a78bfa;
+font-size:11px;
+margin-top:15px
+}
+</style>
+</head>
+
+<body>
+
+<main class="share">
+
+<div class="card">
+
+<div class="icon">🎉</div>
+
+<h2>Mon résultat</h2>
+
+<div class="score">90%</div>
+
+<p>
+J'ai obtenu ce score sur Prezi Quiz !
+<br>
+À ton tour de relever le défi 🔥
+</p>
+
+<button
+class="whatsapp"
+onclick="shareWhatsApp()">
+
+📲 Partager sur WhatsApp
+
+</button>
+
+<button
+class="copy"
+onclick="copyResult()">
+
+🔗 Copier le lien
+
+</button>
+
+<div id="msg"></div>
+
+</div>
+
+</main>
+
+<script>
+
+function shareWhatsApp(){
+
+const text =
+"🎉 J'ai obtenu 90% sur Prezi Quiz ! 🔥 Essaie de faire mieux !";
+
+const url =
+"https://wa.me/?text="+
+encodeURIComponent(text);
+
+window.open(url,"_blank");
+
+}
+
+function copyResult(){
+
+navigator.clipboard.writeText(
+"🎉 J'ai obtenu 90% sur Prezi Quiz ! 🔥"
+);
+
+document.getElementById("msg").textContent =
+"Lien copié ! ✅";
+
+}
+
+</script>
+
+</body>
+</html>
