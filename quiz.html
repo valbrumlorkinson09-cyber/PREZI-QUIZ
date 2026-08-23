@@ -1,0 +1,552 @@
+"use strict";
+
+/* =========================================================
+   PREZI QUIZ
+   QUIZ DATA — V1
+========================================================= */
+
+const QUIZ_DATA = {
+
+    general: {
+        name: "General Knowledge",
+        questions: [
+            {
+                question: "What is the largest ocean on Earth?",
+                answers: [
+                    "Atlantic Ocean",
+                    "Indian Ocean",
+                    "Pacific Ocean",
+                    "Arctic Ocean"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "How many continents are there on Earth?",
+                answers: [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What is the capital of France?",
+                answers: [
+                    "Madrid",
+                    "Paris",
+                    "Rome",
+                    "Berlin"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which planet is known as the Red Planet?",
+                answers: [
+                    "Venus",
+                    "Mars",
+                    "Jupiter",
+                    "Mercury"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "How many days are there in a leap year?",
+                answers: [
+                    "364",
+                    "365",
+                    "366",
+                    "367"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which animal is known as the King of the Jungle?",
+                answers: [
+                    "Tiger",
+                    "Elephant",
+                    "Lion",
+                    "Leopard"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What is the fastest land animal?",
+                answers: [
+                    "Lion",
+                    "Cheetah",
+                    "Horse",
+                    "Leopard"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which language has the most native speakers worldwide?",
+                answers: [
+                    "English",
+                    "Spanish",
+                    "Mandarin Chinese",
+                    "French"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What is the smallest prime number?",
+                answers: [
+                    "0",
+                    "1",
+                    "2",
+                    "3"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which gas do humans need to breathe to survive?",
+                answers: [
+                    "Carbon dioxide",
+                    "Oxygen",
+                    "Hydrogen",
+                    "Helium"
+                ],
+                correct: 1
+            }
+        ]
+    },
+
+
+    sports: {
+        name: "Sports",
+        questions: [
+            {
+                question: "How many players are on the field for one football team at the start of a match?",
+                answers: [
+                    "9",
+                    "10",
+                    "11",
+                    "12"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which sport is played at Wimbledon?",
+                answers: [
+                    "Football",
+                    "Tennis",
+                    "Cricket",
+                    "Golf"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "How many rings are on the Olympic flag?",
+                answers: [
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which country is famous for originating modern football?",
+                answers: [
+                    "Brazil",
+                    "England",
+                    "Spain",
+                    "Italy"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "How long is a standard football match, excluding added time?",
+                answers: [
+                    "60 minutes",
+                    "75 minutes",
+                    "90 minutes",
+                    "120 minutes"
+                ],
+                correct: 2
+            }
+        ]
+    },
+
+
+    science: {
+        name: "Science",
+        questions: [
+            {
+                question: "What is H₂O commonly known as?",
+                answers: [
+                    "Oxygen",
+                    "Water",
+                    "Hydrogen",
+                    "Salt"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "What force keeps objects attracted to Earth?",
+                answers: [
+                    "Magnetism",
+                    "Gravity",
+                    "Friction",
+                    "Electricity"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which organ pumps blood around the human body?",
+                answers: [
+                    "Lung",
+                    "Brain",
+                    "Heart",
+                    "Liver"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "What is the center of an atom called?",
+                answers: [
+                    "Electron",
+                    "Nucleus",
+                    "Molecule",
+                    "Cell"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which planet is closest to the Sun?",
+                answers: [
+                    "Earth",
+                    "Venus",
+                    "Mercury",
+                    "Mars"
+                ],
+                correct: 2
+            }
+        ]
+    },
+
+
+    technology: {
+        name: "Technology",
+        questions: [
+            {
+                question: "What does CPU stand for?",
+                answers: [
+                    "Central Processing Unit",
+                    "Computer Personal Unit",
+                    "Central Program Utility",
+                    "Computer Processing User"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Which company developed the Android operating system?",
+                answers: [
+                    "Microsoft",
+                    "Google",
+                    "Apple",
+                    "IBM"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "What does HTML stand for?",
+                answers: [
+                    "HyperText Markup Language",
+                    "HighText Machine Language",
+                    "Hyper Transfer Main Language",
+                    "Home Tool Markup Language"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Which device is commonly used to store digital files?",
+                answers: [
+                    "Hard drive",
+                    "Monitor",
+                    "Keyboard",
+                    "Speaker"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "What does AI commonly stand for?",
+                answers: [
+                    "Automatic Internet",
+                    "Artificial Intelligence",
+                    "Advanced Information",
+                    "Applied Internet"
+                ],
+                correct: 1
+            }
+        ]
+    },
+
+
+    history: {
+        name: "History",
+        questions: [
+            {
+                question: "Who was the first president of the United States?",
+                answers: [
+                    "Abraham Lincoln",
+                    "George Washington",
+                    "Thomas Jefferson",
+                    "John Adams"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "The pyramids of Giza are located in which country?",
+                answers: [
+                    "Mexico",
+                    "Greece",
+                    "Egypt",
+                    "Turkey"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which ancient civilization built Machu Picchu?",
+                answers: [
+                    "Roman",
+                    "Maya",
+                    "Inca",
+                    "Greek"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "The Renaissance began in which European country?",
+                answers: [
+                    "France",
+                    "Italy",
+                    "Germany",
+                    "Portugal"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which famous ship sank in 1912?",
+                answers: [
+                    "Titanic",
+                    "Mayflower",
+                    "Santa Maria",
+                    "Endeavour"
+                ],
+                correct: 0
+            }
+        ]
+    },
+
+
+    geography: {
+        name: "Geography",
+        questions: [
+            {
+                question: "What is the largest country in the world by area?",
+                answers: [
+                    "Canada",
+                    "China",
+                    "Russia",
+                    "United States"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which is the longest river in Africa?",
+                answers: [
+                    "Amazon River",
+                    "Nile River",
+                    "Congo River",
+                    "Niger River"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which continent is the Sahara Desert located in?",
+                answers: [
+                    "Asia",
+                    "Africa",
+                    "Australia",
+                    "South America"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "What is the capital city of Japan?",
+                answers: [
+                    "Seoul",
+                    "Beijing",
+                    "Tokyo",
+                    "Bangkok"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which ocean lies between Africa and Australia?",
+                answers: [
+                    "Atlantic Ocean",
+                    "Indian Ocean",
+                    "Pacific Ocean",
+                    "Arctic Ocean"
+                ],
+                correct: 1
+            }
+        ]
+    },
+
+
+    movies: {
+        name: "Movies",
+        questions: [
+            {
+                question: "Which film series features the character Harry Potter?",
+                answers: [
+                    "The Lord of the Rings",
+                    "Harry Potter",
+                    "Star Wars",
+                    "The Hunger Games"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which fictional city is Batman associated with?",
+                answers: [
+                    "Metropolis",
+                    "Gotham City",
+                    "Star City",
+                    "Central City"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which movie features the character Jack Sparrow?",
+                answers: [
+                    "Pirates of the Caribbean",
+                    "Avatar",
+                    "Jurassic Park",
+                    "The Matrix"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Which superhero is also known as the Man of Steel?",
+                answers: [
+                    "Batman",
+                    "Spider-Man",
+                    "Superman",
+                    "Iron Man"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which film features the fictional world of Pandora?",
+                answers: [
+                    "Avatar",
+                    "Titanic",
+                    "Inception",
+                    "Interstellar"
+                ],
+                correct: 0
+            }
+        ]
+    },
+
+
+    music: {
+        name: "Music",
+        questions: [
+            {
+                question: "How many strings does a standard guitar usually have?",
+                answers: [
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Which instrument has black and white keys?",
+                answers: [
+                    "Violin",
+                    "Piano",
+                    "Trumpet",
+                    "Drum"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which instrument is commonly associated with a bow and four strings?",
+                answers: [
+                    "Violin",
+                    "Flute",
+                    "Piano",
+                    "Saxophone"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "What is a group of singers called?",
+                answers: [
+                    "Choir",
+                    "Band",
+                    "Orchestra",
+                    "Duo"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Which clef is commonly used for higher-pitched notes?",
+                answers: [
+                    "Bass clef",
+                    "Treble clef",
+                    "Alto clef",
+                    "Tenor clef"
+                ],
+                correct: 1
+            }
+        ]
+    }
+
+};
