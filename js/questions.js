@@ -24,13 +24,21 @@ const ALL_QUESTIONS = [
         ? CINEMA_QUESTIONS
         : []),
 
-    ...(typeof GENERAL_QUESTIONS !== "undefined"
-        ? GENERAL_QUESTIONS
+    ...(typeof MUSIC_QUESTIONS !== "undefined"
+        ? MUSIC_QUESTIONS
+        : []),
+
+    ...(typeof TECHNOLOGY_QUESTIONS !== "undefined"
+        ? TECHNOLOGY_QUESTIONS
+        : []),
+
+    ...(typeof CULTURE_QUESTIONS !== "undefined"
+        ? CULTURE_QUESTIONS
         : [])
 
 ];
 
 console.log(
-    "✅ PREZIQUIZ — TOTAL QUESTIONS:",
+    "PREZIQUIZ — Total questions:",
     ALL_QUESTIONS.length
 );
