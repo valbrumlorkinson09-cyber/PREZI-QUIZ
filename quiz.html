@@ -1,11 +1,14 @@
-quiz.html
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Quiz | PreziQuiz</title>
 
@@ -181,6 +184,7 @@ font-size:10px;
 }
 
 </style>
+
 </head>
 
 
@@ -243,7 +247,8 @@ id="answers">
 <button
 class="next"
 id="nextButton"
-disabled>
+disabled
+>
 Question suivante →
 </button>
 
@@ -267,9 +272,13 @@ Question 1 / 10
      QUESTION BANK
 ========================================= -->
 
-<script src="questions-football.js"></script>
+<script src="questions/football.js"></script>
 
-<script src="questions.js"></script>
+<!-- =========================================
+     GLOBAL BANK
+========================================= -->
+
+<script src="js/questions.js"></script>
 
 
 <script>
@@ -317,124 +326,37 @@ technology:"💻 Technologie",
 
 culture:"🌎 Culture Générale",
 
-sports:"🏅 Sports"
+general:"🌎 Culture Générale"
 
 };
 
 
 /* =========================================
-   CHECK FOOTBALL BANK
+   CHECK BANK
 ========================================= */
 
 if(
-typeof FOOTBALL_QUESTIONS === "undefined"
+typeof ALL_QUESTIONS === "undefined"
 ){
 
 document.getElementById(
 "question"
 ).textContent =
-"Erreur : questions-football.js ne contient aucune banque valide.";
+"Erreur : banque de questions introuvable.";
 
 throw new Error(
-"FOOTBALL_QUESTIONS introuvable"
+"ALL_QUESTIONS introuvable"
 );
 
 }
 
 
 /* =========================================
-   GLOBAL BANK
-========================================= */
-
-let ALL_BANK = [];
-
-
-/* FOOTBALL */
-
-ALL_BANK.push(
-...FOOTBALL_QUESTIONS
-);
-
-
-/* OTHER BANKS IF THEY EXIST */
-
-if(
-typeof SCIENCE_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...SCIENCE_QUESTIONS
-);
-
-}
-
-if(
-typeof HISTORY_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...HISTORY_QUESTIONS
-);
-
-}
-
-if(
-typeof GEOGRAPHY_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...GEOGRAPHY_QUESTIONS
-);
-
-}
-
-if(
-typeof CINEMA_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...CINEMA_QUESTIONS
-);
-
-}
-
-if(
-typeof MUSIC_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...MUSIC_QUESTIONS
-);
-
-}
-
-if(
-typeof TECHNOLOGY_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...TECHNOLOGY_QUESTIONS
-);
-
-}
-
-if(
-typeof CULTURE_QUESTIONS !== "undefined"
-){
-
-ALL_BANK.push(
-...CULTURE_QUESTIONS
-);
-
-}
-
-
-/* =========================================
-   FILTER CATEGORY
+   FILTER
 ========================================= */
 
 let availableQuestions =
-ALL_BANK.filter(
+ALL_QUESTIONS.filter(
 item =>
 String(item.category)
 .toLowerCase()
@@ -444,7 +366,7 @@ selectedCategory
 
 
 /* =========================================
-   FOOTBALL FALLBACK
+   FALLBACK
 ========================================= */
 
 if(
@@ -452,7 +374,7 @@ availableQuestions.length === 0
 ){
 
 availableQuestions =
-FOOTBALL_QUESTIONS.filter(
+ALL_QUESTIONS.filter(
 item =>
 String(item.category)
 .toLowerCase()
@@ -480,15 +402,13 @@ i--
 
 const j =
 Math.floor(
-Math.random() *
-(i + 1)
+Math.random() * (i + 1)
 );
 
 [
 copy[i],
 copy[j]
-] =
-[
+]=[
 copy[j],
 copy[i]
 ];
@@ -501,7 +421,7 @@ return copy;
 
 
 /* =========================================
-   CREATE QUIZ
+   QUIZ QUESTIONS
 ========================================= */
 
 let quizQuestions =
@@ -518,7 +438,7 @@ availableQuestions.length
 
 
 /* =========================================
-   CHECK QUESTIONS
+   CHECK
 ========================================= */
 
 if(
@@ -630,10 +550,11 @@ currentQuestion
 
 categoryElement.textContent =
 categoryNames[
-selectedCategory
+String(data.category)
+.toLowerCase()
 ]
 ||
-selectedCategory;
+data.category;
 
 
 /* DIFFICULTY */
@@ -683,6 +604,8 @@ answersElement.innerHTML =
 "";
 
 
+/* CREATE ANSWERS */
+
 const answerObjects =
 data.answers.map(
 (answer,index)=>({
@@ -704,7 +627,7 @@ answerObjects
 );
 
 
-/* DISPLAY ANSWERS */
+/* DISPLAY */
 
 shuffledAnswers.forEach(
 item=>{
@@ -848,7 +771,7 @@ button.classList.add(
 
 
 /* =========================================
-   SHOW CORRECT ANSWER
+   SHOW CORRECT
 ========================================= */
 
 function showCorrectAnswer(){
@@ -858,18 +781,16 @@ quizQuestions[
 currentQuestion
 ];
 
-const buttons =
-document.querySelectorAll(
-".answer"
-);
-
 const correctText =
 data.answers[
 data.correct
 ];
 
-
-buttons.forEach(
+document
+.querySelectorAll(
+".answer"
+)
+.forEach(
 button=>{
 
 if(
@@ -889,7 +810,7 @@ button.classList.add(
 
 
 /* =========================================
-   NEXT QUESTION
+   NEXT
 ========================================= */
 
 nextButton.addEventListener(
@@ -923,7 +844,7 @@ loadQuestion();
 
 
 /* =========================================
-   FINISH QUIZ
+   FINISH
 ========================================= */
 
 function finishQuiz(){
@@ -931,15 +852,11 @@ function finishQuiz(){
 clearInterval(timer);
 
 
-/* SCORE */
-
 localStorage.setItem(
 "preziQuizScore",
 score
 );
 
-
-/* TOTAL */
 
 localStorage.setItem(
 "preziQuizTotal",
@@ -947,23 +864,17 @@ quizQuestions.length
 );
 
 
-/* CATEGORY */
-
 localStorage.setItem(
 "preziQuizCategory",
 selectedCategory
 );
 
 
-/* POINTS */
-
 localStorage.setItem(
 "preziQuizPoints",
 score * 100
 );
 
-
-/* RESULT */
 
 window.location.href =
 "result.html";
@@ -984,13 +895,8 @@ console.log(
 );
 
 console.log(
-"📚 Football questions:",
-FOOTBALL_QUESTIONS.length
-);
-
-console.log(
-"📚 Total questions:",
-ALL_BANK.length
+"📚 Total:",
+ALL_QUESTIONS.length
 );
 
 console.log(
