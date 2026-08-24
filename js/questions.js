@@ -4,25 +4,41 @@
 
 const ALL_QUESTIONS = [
 
-    ...FOOTBALL_QUESTIONS,
+    ...(typeof FOOTBALL_QUESTIONS !== "undefined"
+        ? FOOTBALL_QUESTIONS
+        : []),
 
-    ...SCIENCE_QUESTIONS,
+    ...(typeof SCIENCE_QUESTIONS !== "undefined"
+        ? SCIENCE_QUESTIONS
+        : []),
 
-    ...HISTORY_QUESTIONS,
+    ...(typeof HISTORY_QUESTIONS !== "undefined"
+        ? HISTORY_QUESTIONS
+        : []),
 
-    ...GEOGRAPHY_QUESTIONS,
+    ...(typeof GEOGRAPHY_QUESTIONS !== "undefined"
+        ? GEOGRAPHY_QUESTIONS
+        : []),
 
-    ...CINEMA_QUESTIONS,
+    ...(typeof CINEMA_QUESTIONS !== "undefined"
+        ? CINEMA_QUESTIONS
+        : []),
 
-    ...MUSIC_QUESTIONS,
+    ...(typeof MUSIC_QUESTIONS !== "undefined"
+        ? MUSIC_QUESTIONS
+        : []),
 
-    ...TECHNOLOGY_QUESTIONS,
+    ...(typeof TECHNOLOGY_QUESTIONS !== "undefined"
+        ? TECHNOLOGY_QUESTIONS
+        : []),
 
-    ...CULTURE_QUESTIONS
+    ...(typeof CULTURE_QUESTIONS !== "undefined"
+        ? CULTURE_QUESTIONS
+        : [])
 
 ];
 
 console.log(
-    "PREZIQUIZ — Questions chargées :",
+    "✅ PREZIQUIZ — Questions chargées :",
     ALL_QUESTIONS.length
 );
