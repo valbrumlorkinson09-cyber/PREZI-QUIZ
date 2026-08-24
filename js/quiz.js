@@ -1,8 +1,9 @@
 "use strict";
 
 /* =========================================================
-   PREZI QUIZ
-   QUIZ ENGINE — V1
+   PREZIQUIZ
+   QUIZ ENGINE — V2
+   GLOBAL QUESTION BANK
 ========================================================= */
 
 
@@ -12,26 +13,258 @@
 
 const params = new URLSearchParams(window.location.search);
 
-let category = params.get("category") || "general";
+const requestedCategory =
+    (params.get("category") || "culture").toLowerCase();
 
-if (!QUIZ_DATA[category]) {
-    category = "general";
+
+/* =========================
+   CATEGORY NAMES
+========================= */
+
+const CATEGORY_NAMES = {
+
+    football: "Football",
+
+    science: "Science",
+
+    history: "Histoire",
+
+    geography: "Géographie",
+
+    cinema: "Cinéma & Séries",
+
+    music: "Musique",
+
+    technology: "Technologie",
+
+    culture: "Culture Générale",
+
+    general: "Culture Générale"
+
+};
+
+
+/* =========================
+   CATEGORY ALIASES
+========================= */
+
+const CATEGORY_ALIASES = {
+
+    general: "culture",
+
+    culture_generale: "culture",
+
+    culturel: "culture",
+
+    sciences: "science",
+
+    histoire: "history",
+
+    geo: "geography",
+
+    film: "cinema",
+
+    films: "cinema",
+
+    musique: "music",
+
+    tech: "technology"
+
+};
+
+
+let category =
+    CATEGORY_ALIASES[requestedCategory] ||
+    requestedCategory;
+
+
+/* =========================
+   CHECK QUESTION BANK
+========================= */
+
+if (
+    typeof ALL_QUESTIONS === "undefined" ||
+    !Array.isArray(ALL_QUESTIONS)
+) {
+
+    document.body.innerHTML = `
+        <div style="
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:25px;
+            background:#080808;
+            color:white;
+            font-family:Arial,sans-serif;
+            text-align:center;
+        ">
+            <div>
+                <h2>❌ Erreur</h2>
+                <p>Banque de questions introuvable.</p>
+                <p>
+                    Vérifiez que questions.js est chargé
+                    avant quiz.js.
+                </p>
+            </div>
+        </div>
+    `;
+
+    throw new Error(
+        "PREZIQUIZ: ALL_QUESTIONS introuvable."
+    );
+
 }
 
 
 /* =========================
-   QUIZ DATA
+   FILTER QUESTIONS
 ========================= */
 
-const quiz = QUIZ_DATA[category];
+let categoryQuestions =
+    ALL_QUESTIONS.filter(question => {
 
-const questions = quiz.questions;
+        return String(question.category)
+            .toLowerCase()
+            === category;
+
+    });
+
+
+/* =========================
+   GENERAL FALLBACK
+========================= */
+
+if (categoryQuestions.length === 0) {
+
+    console.warn(
+        "Catégorie introuvable :",
+        category
+    );
+
+    category = "culture";
+
+    categoryQuestions =
+        ALL_QUESTIONS.filter(question => {
+
+            return String(question.category)
+                .toLowerCase()
+                === category;
+
+        });
+
+}
+
+
+/* =========================
+   SHUFFLE
+========================= */
+
+function shuffle(array) {
+
+    const copy = [...array];
+
+    for (
+        let i = copy.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            copy[i],
+            copy[j]
+        ] =
+        [
+            copy[j],
+            copy[i]
+        ];
+
+    }
+
+    return copy;
+
+}
+
+
+/* =========================
+   CREATE QUIZ
+   10 QUESTIONS
+========================= */
+
+const questions =
+    shuffle(categoryQuestions)
+        .slice(0, Math.min(10, categoryQuestions.length));
+
+
+/* =========================
+   CHECK
+========================= */
+
+if (questions.length === 0) {
+
+    document.body.innerHTML = `
+        <div style="
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#080808;
+            color:white;
+            font-family:Arial,sans-serif;
+            text-align:center;
+            padding:20px;
+        ">
+            <div>
+                <h2>⚠️ Aucune question</h2>
+
+                <p>
+                    Cette catégorie ne contient
+                    aucune question.
+                </p>
+            </div>
+        </div>
+    `;
+
+    throw new Error(
+        "PREZIQUIZ: aucune question disponible."
+    );
+
+}
+
+
+/* =========================
+   QUIZ INFO
+========================= */
+
+const quiz = {
+
+    name:
+        CATEGORY_NAMES[category]
+        || category,
+
+    questions:
+        questions
+
+};
+
+
+/* =========================
+   STATE
+========================= */
 
 let currentQuestion = 0;
+
 let score = 0;
+
 let answered = false;
 
 let timeLeft = 300;
+
 let timerInterval;
 
 
@@ -40,37 +273,59 @@ let timerInterval;
 ========================= */
 
 const quizCategory =
-    document.getElementById("quizCategory");
+    document.getElementById(
+        "quizCategory"
+    );
 
 const timer =
-    document.getElementById("timer");
+    document.getElementById(
+        "timer"
+    );
 
 const questionCounter =
-    document.getElementById("questionCounter");
+    document.getElementById(
+        "questionCounter"
+    );
 
 const scoreDisplay =
-    document.getElementById("scoreDisplay");
+    document.getElementById(
+        "scoreDisplay"
+    );
 
 const progressFill =
-    document.getElementById("progressFill");
+    document.getElementById(
+        "progressFill"
+    );
 
 const questionNumber =
-    document.getElementById("questionNumber");
+    document.getElementById(
+        "questionNumber"
+    );
 
 const questionText =
-    document.getElementById("questionText");
+    document.getElementById(
+        "questionText"
+    );
 
 const answersContainer =
-    document.getElementById("answersContainer");
+    document.getElementById(
+        "answersContainer"
+    );
 
 const nextBtn =
-    document.getElementById("nextBtn");
+    document.getElementById(
+        "nextBtn"
+    );
 
 const loadingQuiz =
-    document.getElementById("loadingQuiz");
+    document.getElementById(
+        "loadingQuiz"
+    );
 
 const quizContent =
-    document.getElementById("quizContent");
+    document.getElementById(
+        "quizContent"
+    );
 
 
 /* =========================
@@ -79,11 +334,26 @@ const quizContent =
 
 function startQuiz() {
 
-    quizCategory.textContent =
-        quiz.name.toUpperCase();
+    if (quizCategory) {
 
-    loadingQuiz.style.display = "none";
-    quizContent.style.display = "block";
+        quizCategory.textContent =
+            quiz.name.toUpperCase();
+
+    }
+
+    if (loadingQuiz) {
+
+        loadingQuiz.style.display =
+            "none";
+
+    }
+
+    if (quizContent) {
+
+        quizContent.style.display =
+            "block";
+
+    }
 
     showQuestion();
 
@@ -100,7 +370,16 @@ function showQuestion() {
 
     answered = false;
 
-    nextBtn.classList.remove("show");
+    if (nextBtn) {
+
+        nextBtn.classList.remove(
+            "show"
+        );
+
+        nextBtn.textContent =
+            "Question suivante →";
+
+    }
 
     const question =
         questions[currentQuestion];
@@ -108,68 +387,116 @@ function showQuestion() {
 
     /* COUNTER */
 
-    questionCounter.textContent =
-        `Question ${currentQuestion + 1} of ${questions.length}`;
+    if (questionCounter) {
+
+        questionCounter.textContent =
+            `Question ${currentQuestion + 1} / ${questions.length}`;
+
+    }
 
 
     /* NUMBER */
 
-    questionNumber.textContent =
-        `QUESTION ${String(currentQuestion + 1).padStart(2, "0")}`;
+    if (questionNumber) {
+
+        questionNumber.textContent =
+            `QUESTION ${String(
+                currentQuestion + 1
+            ).padStart(2, "0")}`;
+
+    }
 
 
     /* QUESTION */
 
-    questionText.textContent =
-        question.question;
+    if (questionText) {
+
+        questionText.textContent =
+            question.question;
+
+    }
 
 
     /* SCORE */
 
-    scoreDisplay.textContent =
-        `Score: ${score}`;
+    if (scoreDisplay) {
+
+        scoreDisplay.textContent =
+            `Score: ${score}`;
+
+    }
 
 
     /* PROGRESS */
 
-    const progress =
-        ((currentQuestion) / questions.length) * 100;
+    if (progressFill) {
 
-    progressFill.style.width =
-        `${progress}%`;
+        const progress =
+            (
+                currentQuestion /
+                questions.length
+            ) * 100;
+
+        progressFill.style.width =
+            `${progress}%`;
+
+    }
 
 
     /* ANSWERS */
 
-    answersContainer.innerHTML = "";
+    if (!answersContainer) {
 
-    const letters = ["A", "B", "C", "D"];
+        return;
 
-    question.answers.forEach((answer, index) => {
+    }
 
-        const button =
-            document.createElement("button");
+    answersContainer.innerHTML =
+        "";
 
-        button.className = "answer-btn";
+    const letters =
+        ["A", "B", "C", "D"];
 
-        button.innerHTML = `
-            <span class="answer-letter">
-                ${letters[index]}
-            </span>
 
-            <span>
-                ${answer}
-            </span>
-        `;
+    question.answers.forEach(
+        (answer, index) => {
 
-        button.addEventListener(
-            "click",
-            () => selectAnswer(index, button)
-        );
+            const button =
+                document.createElement(
+                    "button"
+                );
 
-        answersContainer.appendChild(button);
+            button.className =
+                "answer-btn";
 
-    });
+
+            button.innerHTML = `
+                <span class="answer-letter">
+                    ${letters[index]}
+                </span>
+
+                <span>
+                    ${answer}
+                </span>
+            `;
+
+
+            button.addEventListener(
+                "click",
+                () =>
+                    selectAnswer(
+                        index,
+                        button
+                    )
+            );
+
+
+            answersContainer.appendChild(
+                button
+            );
+
+        }
+    );
 
 }
 
@@ -178,54 +505,103 @@ function showQuestion() {
    SELECT ANSWER
 ========================= */
 
-function selectAnswer(index, selectedButton) {
+function selectAnswer(
+    index,
+    selectedButton
+) {
 
     if (answered) {
+
         return;
+
     }
 
     answered = true;
 
+
     const question =
         questions[currentQuestion];
 
+
     const buttons =
-        document.querySelectorAll(".answer-btn");
+        document.querySelectorAll(
+            ".answer-btn"
+        );
 
 
     buttons.forEach(button => {
 
-        button.classList.add("disabled");
+        button.classList.add(
+            "disabled"
+        );
 
     });
 
 
-    if (index === question.correct) {
+    /* CORRECT */
 
-        selectedButton.classList.add("correct");
+    if (
+        index ===
+        question.correct
+    ) {
+
+        selectedButton.classList.add(
+            "correct"
+        );
 
         score++;
-
-        scoreDisplay.textContent =
-            `Score: ${score}`;
-
-    } else {
-
-        selectedButton.classList.add("wrong");
-
-        buttons[question.correct]
-            .classList.add("correct");
 
     }
 
 
-    nextBtn.classList.add("show");
+    /* WRONG */
+
+    else {
+
+        selectedButton.classList.add(
+            "wrong"
+        );
 
 
-    if (currentQuestion === questions.length - 1) {
+        if (
+            buttons[question.correct]
+        ) {
 
-        nextBtn.textContent =
-            "See My Result →";
+            buttons[
+                question.correct
+            ].classList.add(
+                "correct"
+            );
+
+        }
+
+    }
+
+
+    if (scoreDisplay) {
+
+        scoreDisplay.textContent =
+            `Score: ${score}`;
+
+    }
+
+
+    if (nextBtn) {
+
+        nextBtn.classList.add(
+            "show"
+        );
+
+
+        if (
+            currentQuestion ===
+            questions.length - 1
+        ) {
+
+            nextBtn.textContent =
+                "Voir mon résultat →";
+
+        }
 
     }
 
@@ -236,21 +612,33 @@ function selectAnswer(index, selectedButton) {
    NEXT QUESTION
 ========================= */
 
-nextBtn.addEventListener("click", () => {
+if (nextBtn) {
 
-    currentQuestion++;
+    nextBtn.addEventListener(
+        "click",
+        () => {
 
-    if (currentQuestion >= questions.length) {
+            currentQuestion++;
 
-        finishQuiz();
 
-        return;
+            if (
+                currentQuestion >=
+                questions.length
+            ) {
 
-    }
+                finishQuiz();
 
-    showQuestion();
+                return;
 
-});
+            }
+
+
+            showQuestion();
+
+        }
+    );
+
+}
 
 
 /* =========================
@@ -261,22 +649,31 @@ function startTimer() {
 
     updateTimer();
 
+
     timerInterval =
-        setInterval(() => {
+        setInterval(
+            () => {
 
-            timeLeft--;
+                timeLeft--;
 
-            updateTimer();
+                updateTimer();
 
-            if (timeLeft <= 0) {
 
-                clearInterval(timerInterval);
+                if (
+                    timeLeft <= 0
+                ) {
 
-                finishQuiz();
+                    clearInterval(
+                        timerInterval
+                    );
 
-            }
+                    finishQuiz();
 
-        }, 1000);
+                }
+
+            },
+            1000
+        );
 
 }
 
@@ -287,11 +684,22 @@ function startTimer() {
 
 function updateTimer() {
 
+    if (!timer) {
+
+        return;
+
+    }
+
+
     const minutes =
-        Math.floor(timeLeft / 60);
+        Math.floor(
+            timeLeft / 60
+        );
+
 
     const seconds =
         timeLeft % 60;
+
 
     timer.textContent =
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
@@ -303,17 +711,28 @@ function updateTimer() {
     );
 
 
-    if (timeLeft <= 60) {
+    if (
+        timeLeft <= 60
+    ) {
 
-        timer.classList.add("warning");
+        timer.classList.add(
+            "warning"
+        );
 
     }
 
-    if (timeLeft <= 20) {
 
-        timer.classList.remove("warning");
+    if (
+        timeLeft <= 20
+    ) {
 
-        timer.classList.add("danger");
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
 
     }
 
@@ -326,22 +745,31 @@ function updateTimer() {
 
 function finishQuiz() {
 
-    clearInterval(timerInterval);
+    clearInterval(
+        timerInterval
+    );
 
 
     const result = {
 
-        category: category,
+        category:
+            category,
 
-        categoryName: quiz.name,
+        categoryName:
+            quiz.name,
 
-        score: score,
+        score:
+            score,
 
-        total: questions.length,
+        total:
+            questions.length,
 
         percentage:
             Math.round(
-                (score / questions.length) * 100
+                (
+                    score /
+                    questions.length
+                ) * 100
             ),
 
         completedAt:
@@ -360,6 +788,30 @@ function finishQuiz() {
         `result.html?category=${encodeURIComponent(category)}`;
 
 }
+
+
+/* =========================
+   DEBUG
+========================= */
+
+console.log(
+    "✅ PREZIQUIZ ENGINE READY"
+);
+
+console.log(
+    "📚 Total questions:",
+    ALL_QUESTIONS.length
+);
+
+console.log(
+    "🎯 Category:",
+    category
+);
+
+console.log(
+    "❓ Questions selected:",
+    questions.length
+);
 
 
 /* =========================
