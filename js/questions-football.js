@@ -1286,3 +1286,951 @@ correct:1
 }
 
 ];
+
+/* =====================================================
+   ⚽ FOOTBALL — BLOC 4
+   DERBYS • LIGUES • RECORDS • RIVALITÉS
+===================================================== */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club affronte traditionnellement Manchester City dans le derby de Manchester ?",
+answers:[
+"Liverpool",
+"Manchester United",
+"Leeds United",
+"Everton"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel est le nom du derby entre le Real Madrid et l'Atlético Madrid ?",
+answers:[
+"Derbi madrileño",
+"El Clásico",
+"Derbi del Sol",
+"Derbi ibérique"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club est le principal rival du FC Barcelone dans le célèbre El Clásico ?",
+answers:[
+"Atlético Madrid",
+"Real Madrid",
+"Valence",
+"Sevilla"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel derby oppose Liverpool et Everton ?",
+answers:[
+"Derby de la Merseyside",
+"Derby du Nord",
+"Derby de Manchester",
+"Derby anglais"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel derby oppose l'Inter Milan et l'AC Milan ?",
+answers:[
+"Derby della Capitale",
+"Derby della Madonnina",
+"Derby d'Italia",
+"Derby de Lombardie"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel derby romain oppose l'AS Roma à la Lazio ?",
+answers:[
+"Derby della Capitale",
+"Derby della Madonnina",
+"Derby d'Italia",
+"Derby del Sole"
+],
+correct:0
+},
+
+/* =========================
+   🏴 PREMIER LEAGUE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club anglais joue traditionnellement en rouge à Anfield ?",
+answers:[
+"Liverpool",
+"Arsenal",
+"Manchester United",
+"Leicester City"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club anglais joue à l'Emirates Stadium ?",
+answers:[
+"Chelsea",
+"Arsenal",
+"Tottenham",
+"West Ham"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club joue au Tottenham Hotspur Stadium ?",
+answers:[
+"Tottenham Hotspur",
+"Arsenal",
+"West Ham",
+"Fulham"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté le championnat anglais invaincu lors de la saison 2003-2004 ?",
+answers:[
+"Chelsea",
+"Arsenal",
+"Manchester United",
+"Liverpool"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté la Premier League 2015-2016 contre toute attente ?",
+answers:[
+"Leicester City",
+"Everton",
+"Tottenham",
+"West Ham"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club a réalisé une saison complète sans défaite en Premier League en 2003-2004 ?",
+answers:[
+"Liverpool",
+"Arsenal",
+"Chelsea",
+"Manchester United"
+],
+correct:1
+},
+
+/* =========================
+   🇪🇸 LA LIGA
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club espagnol est surnommé les Blaugrana ?",
+answers:[
+"Real Madrid",
+"FC Barcelone",
+"Valence",
+"Villarreal"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club espagnol est surnommé les Colchoneros ?",
+answers:[
+"FC Barcelone",
+"Atlético Madrid",
+"Real Sociedad",
+"Sevilla"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté le titre de Liga lors de la saison 2003-2004 ?",
+answers:[
+"Real Madrid",
+"Valence",
+"FC Barcelone",
+"Deportivo La Coruña"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel entraîneur a dirigé le FC Barcelone lors de sa saison historique 2008-2009 avec six trophées ?",
+answers:[
+"Pep Guardiola",
+"Frank Rijkaard",
+"Luis Enrique",
+"Louis van Gaal"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club espagnol a remporté la Ligue Europa trois fois consécutivement entre 2014 et 2016 ?",
+answers:[
+"Valence",
+"Atlético Madrid",
+"Sevilla",
+"Villarreal"
+],
+correct:2
+},
+
+/* =========================
+   🇮🇹 SERIE A
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club italien est surnommé la Vieille Dame ?",
+answers:[
+"AC Milan",
+"Juventus",
+"Inter Milan",
+"AS Roma"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club italien joue au stade Diego Armando Maradona ?",
+answers:[
+"Napoli",
+"Lazio",
+"Roma",
+"Fiorentina"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté neuf titres consécutifs de Serie A entre 2012 et 2020 ?",
+answers:[
+"Inter Milan",
+"Juventus",
+"AC Milan",
+"Napoli"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club italien a remporté le triplé Serie A, Coupe d'Italie et Ligue des champions en 2010 ?",
+answers:[
+"AC Milan",
+"Juventus",
+"Inter Milan",
+"Roma"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel entraîneur dirigeait l'Inter Milan lors de son triplé historique en 2010 ?",
+answers:[
+"José Mourinho",
+"Carlo Ancelotti",
+"Roberto Mancini",
+"Fabio Capello"
+],
+correct:0
+},
+
+/* =========================
+   🇩🇪 BUNDESLIGA
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club allemand est surnommé le Rekordmeister ?",
+answers:[
+"Borussia Dortmund",
+"Bayern Munich",
+"RB Leipzig",
+"Bayer Leverkusen"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club joue au Signal Iduna Park ?",
+answers:[
+"Bayern Munich",
+"Borussia Dortmund",
+"Schalke 04",
+"Werder Bremen"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté la Bundesliga 2023-2024 en restant invaincu ?",
+answers:[
+"Bayern Munich",
+"Bayer Leverkusen",
+"Borussia Dortmund",
+"RB Leipzig"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel entraîneur dirigeait le Bayer Leverkusen lors de sa saison 2023-2024 historique ?",
+answers:[
+"Thomas Tuchel",
+"Xabi Alonso",
+"Jürgen Klopp",
+"Hansi Flick"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club allemand a remporté la Ligue des champions 1997 ?",
+answers:[
+"Bayern Munich",
+"Borussia Dortmund",
+"Schalke 04",
+"Bayer Leverkusen"
+],
+correct:1
+},
+
+/* =========================
+   🇫🇷 LIGUE 1
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club français joue au Parc des Princes ?",
+answers:[
+"Marseille",
+"Paris Saint-Germain",
+"Lyon",
+"Monaco"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club français est surnommé l'OM ?",
+answers:[
+"AS Monaco",
+"Olympique Lyonnais",
+"Olympique de Marseille",
+"FC Nantes"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club français a remporté la Ligue des champions en 1993 ?",
+answers:[
+"Paris Saint-Germain",
+"AS Monaco",
+"Olympique Lyonnais",
+"Olympique de Marseille"
+],
+correct:3
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club français a remporté sept titres consécutifs de Ligue 1 entre 2002 et 2008 ?",
+answers:[
+"Marseille",
+"Lyon",
+"PSG",
+"Monaco"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club français a remporté la Ligue 1 2016-2017 devant le PSG ?",
+answers:[
+"Monaco",
+"Nice",
+"Lyon",
+"Marseille"
+],
+correct:0
+},
+
+/* =========================
+   📊 RECORDS & STATISTIQUES
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Combien de joueurs composent une équipe sur le terrain au coup d'envoi ?",
+answers:[
+"9",
+"10",
+"11",
+"12"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Combien de points reçoit normalement une équipe pour une victoire en championnat ?",
+answers:[
+"1",
+"2",
+"3",
+"4"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Combien de minutes dure normalement le temps réglementaire d'un match ?",
+answers:[
+"80",
+"90",
+"100",
+"120"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur est célèbre pour avoir marqué cinq buts en seulement neuf minutes avec Wolfsburg en Bundesliga en 2015 ?",
+answers:[
+"Thomas Müller",
+"Robert Lewandowski",
+"Erling Haaland",
+"Harry Kane"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Contre quel club Robert Lewandowski a-t-il marqué cinq buts en neuf minutes en 2015 ?",
+answers:[
+"Borussia Dortmund",
+"VfL Wolfsburg",
+"Schalke 04",
+"Bayer Leverkusen"
+],
+correct:1
+},
+
+/* =========================
+   🧠 FOOTBALL MODERNE
+========================= */
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel entraîneur est fortement associé au style de jeu appelé 'tiki-taka' avec le FC Barcelone et l'Espagne ?",
+answers:[
+"Pep Guardiola",
+"José Mourinho",
+"Diego Simeone",
+"Antonio Conte"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel ancien milieu espagnol a remporté la Coupe du Monde 2010 et marqué le but de la finale ?",
+answers:[
+"Xavi",
+"Andrés Iniesta",
+"David Silva",
+"Xabi Alonso"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur a marqué le but décisif de la finale de la Coupe du Monde 2010 ?",
+answers:[
+"David Villa",
+"Andrés Iniesta",
+"Fernando Torres",
+"Xavi"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur a remporté la Ligue des champions avec le FC Porto puis avec l'Inter Milan comme entraîneur ?",
+answers:[
+"Pep Guardiola",
+"José Mourinho",
+"Carlo Ancelotti",
+"Jürgen Klopp"
+],
+correct:1
+}
+
+];
+/* =====================================================
+   ⚽ FOOTBALL — BLOC 5
+   LÉGENDES • MONDIAL • AFRIQUE • FOOTBALL FÉMININ
+===================================================== */
+
+/* =========================
+   👑 LÉGENDES
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur brésilien est considéré comme l'un des plus grands dribbleurs de l'histoire ?",
+answers:["Ronaldinho","Kaká","Dunga","Cafu"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel ancien joueur français était le capitaine des Bleus lors de la Coupe du Monde 1998 ?",
+answers:["Thierry Henry","Zinedine Zidane","Didier Deschamps","Marcel Desailly"],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur français a marqué deux buts en finale de la Coupe du Monde 1998 ?",
+answers:["Thierry Henry","David Trezeguet","Zinedine Zidane","Youri Djorkaeff"],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur néerlandais est associé au concept de 'Football Total' dans les années 1970 ?",
+answers:["Johan Cruyff","Ruud Gullit","Marco van Basten","Dennis Bergkamp"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur français a remporté la Coupe du Monde 1998 et l'Euro 2000 avec la France ?",
+answers:["Zinedine Zidane","Eric Cantona","Michel Platini","Patrick Vieira"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur italien est célèbre pour avoir remporté la Coupe du Monde 1982 et le Ballon d'Or la même année ?",
+answers:["Paolo Rossi","Franco Baresi","Roberto Baggio","Dino Zoff"],
+correct:0
+},
+
+/* =========================
+   🌎 COUPE DU MONDE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2018 ?",
+answers:["Belgique","Croatie","Angleterre","Portugal"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2022 ?",
+answers:["Croatie","France","Maroc","Pays-Bas"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2014 ?",
+answers:["Argentine","Brésil","Pays-Bas","Italie"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2010 ?",
+answers:["Allemagne","Pays-Bas","Uruguay","Italie"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2006 ?",
+answers:["France","Allemagne","Italie","Portugal"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 2002 ?",
+answers:["Allemagne","Brésil","Turquie","Corée du Sud"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle équipe a perdu la finale de la Coupe du Monde 1998 ?",
+answers:["Brésil","Italie","Allemagne","Pays-Bas"],
+correct:0
+},
+
+/* =========================
+   🏆 FINALES HISTORIQUES
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Qui a remporté la Coupe du Monde 1966 ?",
+answers:["Angleterre","Allemagne de l'Ouest","Brésil","Portugal"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel pays a remporté la Coupe du Monde 1970 ?",
+answers:["Italie","Brésil","Uruguay","Allemagne de l'Ouest"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur brésilien a remporté trois Coupes du Monde ?",
+answers:["Garrincha","Pelé","Rivaldo","Cafu"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle sélection a remporté la Coupe du Monde 1934 ?",
+answers:["Italie","Tchécoslovaquie","Uruguay","Argentine"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle sélection a remporté la Coupe du Monde 1938 ?",
+answers:["Italie","Hongrie","Brésil","France"],
+correct:0
+},
+
+/* =========================
+   🌍 AFRIQUE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays africain a atteint les quarts de finale de la Coupe du Monde 1990 ?",
+answers:["Cameroun","Nigeria","Ghana","Maroc"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays africain a atteint les quarts de finale de la Coupe du Monde 2002 ?",
+answers:["Sénégal","Cameroun","Nigeria","Ghana"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays africain a atteint les quarts de finale de la Coupe du Monde 2010 ?",
+answers:["Ghana","Nigeria","Côte d'Ivoire","Algérie"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel pays africain a été le premier à atteindre les demi-finales d'une Coupe du Monde ?",
+answers:["Ghana","Maroc","Cameroun","Sénégal"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur sénégalais a remporté le Ballon d'Or africain à plusieurs reprises et a joué notamment à Liverpool ?",
+answers:["Sadio Mané","El Hadji Diouf","Kalidou Koulibaly","Papiss Cissé"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur ghanéen a été surnommé 'Baby Jet' ?",
+answers:["Asamoah Gyan","Michael Essien","Sulley Muntari","Stephen Appiah"],
+correct:0
+},
+
+/* =========================
+   👩 FOOTBALL FÉMININ
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle sélection a remporté la Coupe du Monde féminine 2019 ?",
+answers:["États-Unis","Pays-Bas","France","Allemagne"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle sélection a remporté la Coupe du Monde féminine 2023 ?",
+answers:["Angleterre","Espagne","États-Unis","Suède"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle joueuse américaine est devenue l'une des figures les plus célèbres du football féminin mondial ?",
+answers:["Marta","Megan Rapinoe","Alexia Putellas","Aitana Bonmatí"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle joueuse brésilienne détient le record de buts en Coupe du Monde féminine ?",
+answers:["Marta","Formiga","Cristiane","Debinha"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle joueuse espagnole a remporté le Ballon d'Or féminin 2023 ?",
+answers:["Alexia Putellas","Aitana Bonmatí","Jennifer Hermoso","Irene Paredes"],
+correct:1
+},
+
+/* =========================
+   🇭🇹 HAÏTI
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle sélection haïtienne a participé à la Coupe du Monde masculine en 1974 ?",
+answers:["Haïti","République dominicaine","Cuba","Jamaïque"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle joueuse haïtienne est connue pour avoir joué au haut niveau européen et avec la sélection nationale ?",
+answers:["Nerilia Mondésir","Melchie Dumornay","Roselord Borgella","Toutes ces réponses"],
+correct:3
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club français a recruté Melchie Dumornay avant son passage à Lyon ?",
+answers:["Reims","PSG","Marseille","Monaco"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quelle joueuse haïtienne a rejoint l'Olympique Lyonnais après avoir joué au Stade de Reims ?",
+answers:["Nerilia Mondésir","Melchie Dumornay","Roselord Borgella","Batcheba Louis"],
+correct:1
+},
+
+/* =========================
+   🧠 QUESTIONS EXPERT
+========================= */
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club a remporté la Coupe des clubs champions en 1967 avec une équipe écossaise ?",
+answers:["Celtic","Rangers","Aberdeen","Hibernian"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club portugais a remporté la Coupe d'Europe en 1962 et 1961 ?",
+answers:["FC Porto","Sporting CP","Benfica","Braga"],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club néerlandais a remporté la Coupe d'Europe trois années consécutives de 1971 à 1973 ?",
+answers:["PSV Eindhoven","Ajax","Feyenoord","AZ Alkmaar"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club écossais a remporté la Coupe des clubs champions en 1967 ?",
+answers:["Rangers","Celtic","Aberdeen","Hearts"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club allemand a remporté la Ligue des champions en 1997 ?",
+answers:["Bayern Munich","Borussia Dortmund","Bayer Leverkusen","Hambourg"],
+correct:1
+},
+
+/* =========================
+   🔥 MODERN FOOTBALL
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur norvégien a rejoint Manchester City après avoir joué au Borussia Dortmund ?",
+answers:["Martin Ødegaard","Erling Haaland","Alexander Sørloth","Joshua King"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur anglais a longtemps été le meilleur buteur historique de Tottenham ?",
+answers:["Harry Kane","Son Heung-min","Gareth Bale","Jermain Defoe"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur français a rejoint le Real Madrid en 2024 après avoir joué au PSG ?",
+answers:["Ousmane Dembélé","Kylian Mbappé","Randal Kolo Muani","Kingsley Coman"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur argentin a remporté la Coupe du Monde 2022 et évoluait alors au Paris Saint-Germain ?",
+answers:["Ángel Di María","Lionel Messi","Lautaro Martínez","Julián Álvarez"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel entraîneur espagnol a remporté la Premier League avec Manchester City après avoir entraîné le FC Barcelone et le Bayern Munich ?",
+answers:["Pep Guardiola","Unai Emery","Luis Enrique","Rafael Benítez"],
+correct:0
+}
