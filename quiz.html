@@ -121,16 +121,12 @@ gap:11px;
 width:100%;
 min-height:55px;
 padding:15px;
-
 background:#151720;
 color:#fff;
-
 border:1px solid #303340;
 border-radius:12px;
-
 font-size:14px;
 text-align:left;
-
 cursor:pointer;
 transition:.2s;
 }
@@ -157,16 +153,12 @@ pointer-events:none;
 width:100%;
 margin-top:18px;
 padding:15px;
-
 border:none;
 border-radius:12px;
-
 background:#fff;
 color:#08090d;
-
 font-size:14px;
 font-weight:bold;
-
 cursor:pointer;
 }
 
@@ -191,7 +183,6 @@ font-size:10px;
 <body>
 
 <main class="quiz">
-
 
 <header class="header">
 
@@ -266,15 +257,31 @@ Question 1 / 10
 
 </div>
 
-
 </main>
 
 
-<!--
-IMPORTANT:
-Le chemin correspond au fichier:
-js/questions.js
--->
+<!-- =================================================
+     QUESTION BANKS
+================================================= -->
+
+<script src="js/questions-football.js"></script>
+
+<script src="js/questions-science.js"></script>
+
+<script src="js/questions-history.js"></script>
+
+<script src="js/questions-geography.js"></script>
+
+<script src="js/questions-cinema.js"></script>
+
+<script src="js/questions-music.js"></script>
+
+<script src="js/questions-technology.js"></script>
+
+<script src="js/questions-culture.js"></script>
+
+
+<!-- GLOBAL QUESTION BANK -->
 
 <script src="js/questions.js"></script>
 
@@ -282,7 +289,7 @@ js/questions.js
 <script>
 
 /* =========================================
-   PREZQUIZ ENGINE
+   PREZIQUIZ ENGINE
 ========================================= */
 
 
@@ -294,7 +301,10 @@ window.location.search
 );
 
 const selectedCategory =
-params.get("category") || "culture";
+(
+params.get("category")
+|| "culture"
+).toLowerCase();
 
 
 /* CATEGORY NAMES */
@@ -321,11 +331,11 @@ culture:"🌎 Culture Générale"
 
 
 /* =========================================
-   CHECK QUESTION BANK
+   CHECK GLOBAL BANK
 ========================================= */
 
 if(
-typeof QUESTIONS === "undefined"
+typeof ALL_QUESTIONS === "undefined"
 ){
 
 document.getElementById(
@@ -334,7 +344,7 @@ document.getElementById(
 "Erreur : banque de questions introuvable.";
 
 throw new Error(
-"questions.js introuvable"
+"ALL_QUESTIONS introuvable"
 );
 
 }
@@ -345,15 +355,17 @@ throw new Error(
 ========================================= */
 
 let availableQuestions =
-QUESTIONS.filter(
+ALL_QUESTIONS.filter(
 item =>
-item.category ===
+String(item.category)
+.toLowerCase()
+===
 selectedCategory
 );
 
 
 /* =========================================
-   IF CATEGORY DOESN'T EXIST
+   FALLBACK
 ========================================= */
 
 if(
@@ -361,9 +373,12 @@ availableQuestions.length === 0
 ){
 
 availableQuestions =
-QUESTIONS.filter(
+ALL_QUESTIONS.filter(
 item =>
-item.category === "culture"
+String(item.category)
+.toLowerCase()
+===
+"culture"
 );
 
 }
@@ -412,28 +427,34 @@ return copy;
 let quizQuestions =
 shuffle(
 availableQuestions
-);
-
-
-/*
-Nombre de questions.
-Si la catégorie possède moins
-de 10 questions, on utilise
-toutes les questions disponibles.
-*/
-
-const QUIZ_LENGTH =
+)
+.slice(
+0,
 Math.min(
 10,
-quizQuestions.length
+availableQuestions.length
+)
 );
 
 
-quizQuestions =
-quizQuestions.slice(
-0,
-QUIZ_LENGTH
+/* =========================================
+   CHECK
+========================================= */
+
+if(
+quizQuestions.length === 0
+){
+
+document.getElementById(
+"question"
+).textContent =
+"Aucune question disponible.";
+
+throw new Error(
+"Aucune question disponible"
 );
+
+}
 
 
 /* =========================================
@@ -530,14 +551,17 @@ currentQuestion
 categoryElement.textContent =
 categoryNames[
 selectedCategory
-] ||
+]
+||
 selectedCategory;
 
 
 /* DIFFICULTY */
 
 difficultyElement.textContent =
-data.difficulty;
+data.difficulty
+||
+"Medium";
 
 
 /* QUESTION */
@@ -555,7 +579,7 @@ questionNumberElement.textContent =
 +
 " / "
 +
-QUIZ_LENGTH;
+quizQuestions.length;
 
 
 /* PROGRESS */
@@ -564,7 +588,7 @@ const progress =
 (
 (currentQuestion + 1)
 /
-QUIZ_LENGTH
+quizQuestions.length
 )
 *
 100;
@@ -579,13 +603,6 @@ answersElement.innerHTML =
 "";
 
 
-/*
-On transforme les réponses
-en objets pour garder
-la bonne réponse après
-le mélange.
-*/
-
 const answerObjects =
 data.answers.map(
 (answer,index)=>({
@@ -599,7 +616,7 @@ index === data.correct
 );
 
 
-/* MELANGE DES REPONSES */
+/* SHUFFLE ANSWERS */
 
 const shuffledAnswers =
 shuffle(
@@ -607,7 +624,7 @@ answerObjects
 );
 
 
-/* AFFICHAGE */
+/* DISPLAY */
 
 shuffledAnswers.forEach(
 item=>{
@@ -652,6 +669,7 @@ time--;
 timerElement.textContent =
 time;
 
+
 if(
 time <= 0
 ){
@@ -686,7 +704,9 @@ isCorrect
 ){
 
 if(selected){
+
 return;
+
 }
 
 selected = true;
@@ -764,13 +784,6 @@ document.querySelectorAll(
 ".answer"
 );
 
-
-/*
-On cherche la réponse
-qui correspond au texte
-de la bonne réponse.
-*/
-
 const correctText =
 data.answers[
 data.correct
@@ -805,7 +818,9 @@ nextButton.addEventListener(
 ()=>{
 
 if(!selected){
+
 return;
+
 }
 
 currentQuestion++;
@@ -813,7 +828,7 @@ currentQuestion++;
 
 if(
 currentQuestion >=
-QUIZ_LENGTH
+quizQuestions.length
 ){
 
 finishQuiz();
@@ -829,7 +844,7 @@ loadQuestion();
 
 
 /* =========================================
-   FINISH QUIZ
+   FINISH
 ========================================= */
 
 function finishQuiz(){
@@ -849,7 +864,7 @@ score
 
 localStorage.setItem(
 "preziQuizTotal",
-QUIZ_LENGTH
+quizQuestions.length
 );
 
 
@@ -878,8 +893,35 @@ window.location.href =
 
 
 /* =========================================
-   START
+   DEBUG
 ========================================= */
+
+console.log(
+"✅ PREZIQUIZ READY"
+);
+
+console.log(
+"📚 Total questions:",
+ALL_QUESTIONS.length
+);
+
+console.log(
+"🎯 Category:",
+selectedCategory
+);
+
+console.log(
+"❓ Available:",
+availableQuestions.length
+);
+
+console.log(
+"🎲 Selected:",
+quizQuestions.length
+);
+
+
+/* START */
 
 loadQuestion();
 
