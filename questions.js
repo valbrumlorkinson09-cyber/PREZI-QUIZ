@@ -1,5 +1,3 @@
-"use strict";
-
 /* =========================================
    PREZIQUIZ — GLOBAL QUESTION BANK
 ========================================= */
@@ -41,6 +39,6 @@ const ALL_QUESTIONS = [
 ];
 
 console.log(
-    "✅ PREZIQUIZ — TOTAL QUESTIONS:",
+    "PREZIQUIZ — Total questions:",
     ALL_QUESTIONS.length
 );
