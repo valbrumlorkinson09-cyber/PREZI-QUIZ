@@ -5,10 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quiz | PreziQuiz</title>
 
@@ -121,16 +119,12 @@ gap:11px;
 width:100%;
 min-height:55px;
 padding:15px;
-
 background:#151720;
 color:#fff;
-
 border:1px solid #303340;
 border-radius:12px;
-
 font-size:14px;
 text-align:left;
-
 cursor:pointer;
 transition:.2s;
 }
@@ -157,16 +151,12 @@ pointer-events:none;
 width:100%;
 margin-top:18px;
 padding:15px;
-
 border:none;
 border-radius:12px;
-
 background:#fff;
 color:#08090d;
-
 font-size:14px;
 font-weight:bold;
-
 cursor:pointer;
 }
 
@@ -186,7 +176,6 @@ font-size:10px;
 </style>
 
 </head>
-
 
 <body>
 
@@ -247,9 +236,10 @@ id="answers">
 <button
 class="next"
 id="nextButton"
-disabled
->
+disabled>
+
 Question suivante →
+
 </button>
 
 
@@ -260,7 +250,8 @@ Question 1 / 10
 </span>
 
 <span>
-🏆 Score : <b id="score">0</b>
+🏆 Score :
+<b id="score">0</b>
 </span>
 
 </div>
@@ -269,14 +260,27 @@ Question 1 / 10
 
 
 <!-- =========================================
-     QUESTION BANK
+     QUESTION BANKS
 ========================================= -->
 
-<script src="questions/football.js"></script>
+<script src="js/questions/questions-football.js"></script>
 
-<!-- =========================================
-     GLOBAL BANK
-========================================= -->
+<script src="js/questions/questions-science.js"></script>
+
+<script src="js/questions/questions-history.js"></script>
+
+<script src="js/questions/questions-geography.js"></script>
+
+<script src="js/questions/questions-cinema.js"></script>
+
+<script src="js/questions/questions-music.js"></script>
+
+<script src="js/questions/questions-technology.js"></script>
+
+<script src="js/questions/questions-culture.js"></script>
+
+
+<!-- GLOBAL QUESTIONS -->
 
 <script src="js/questions.js"></script>
 
@@ -287,20 +291,17 @@ Question 1 / 10
    PREZIQUIZ ENGINE
 ========================================= */
 
-
-/* =========================================
-   CATEGORY
-========================================= */
-
 const params =
 new URLSearchParams(
 window.location.search
 );
 
+
 const selectedCategory =
 (
 params.get("category")
-|| "football"
+||
+"football"
 ).toLowerCase();
 
 
@@ -324,9 +325,7 @@ music:"🎵 Musique",
 
 technology:"💻 Technologie",
 
-culture:"🌎 Culture Générale",
-
-general:"🌎 Culture Générale"
+culture:"🌎 Culture Générale"
 
 };
 
@@ -342,7 +341,7 @@ typeof ALL_QUESTIONS === "undefined"
 document.getElementById(
 "question"
 ).textContent =
-"Erreur : banque de questions introuvable.";
+"Erreur : questions.js pa chaje.";
 
 throw new Error(
 "ALL_QUESTIONS introuvable"
@@ -352,17 +351,22 @@ throw new Error(
 
 
 /* =========================================
-   FILTER
+   FILTER CATEGORY
 ========================================= */
 
 let availableQuestions =
 ALL_QUESTIONS.filter(
-item =>
-String(item.category)
+item => {
+
+return (
+item &&
+String(item.category || "")
 .toLowerCase()
 ===
 selectedCategory
 );
+
+});
 
 
 /* =========================================
@@ -373,13 +377,35 @@ if(
 availableQuestions.length === 0
 ){
 
-availableQuestions =
-ALL_QUESTIONS.filter(
-item =>
-String(item.category)
-.toLowerCase()
-===
-"football"
+document.getElementById(
+"question"
+).textContent =
+"Aucune question disponible.";
+
+document.getElementById(
+"category"
+).textContent =
+categoryNames[
+selectedCategory
+] || selectedCategory;
+
+console.log(
+"Catégorie:",
+selectedCategory
+);
+
+console.log(
+"Total questions:",
+ALL_QUESTIONS.length
+);
+
+console.log(
+"Questions disponibles:",
+availableQuestions.length
+);
+
+throw new Error(
+"Aucune question disponible"
 );
 
 }
@@ -395,14 +421,15 @@ const copy =
 [...array];
 
 for(
-let i = copy.length - 1;
-i > 0;
+let i=copy.length-1;
+i>0;
 i--
 ){
 
 const j =
 Math.floor(
-Math.random() * (i + 1)
+Math.random() *
+(i+1)
 );
 
 [
@@ -421,7 +448,7 @@ return copy;
 
 
 /* =========================================
-   QUIZ QUESTIONS
+   CREATE QUIZ
 ========================================= */
 
 let quizQuestions =
@@ -435,26 +462,6 @@ Math.min(
 availableQuestions.length
 )
 );
-
-
-/* =========================================
-   CHECK
-========================================= */
-
-if(
-quizQuestions.length === 0
-){
-
-document.getElementById(
-"question"
-).textContent =
-"Aucune question disponible.";
-
-throw new Error(
-"Aucune question disponible"
-);
-
-}
 
 
 /* =========================================
@@ -550,11 +557,10 @@ currentQuestion
 
 categoryElement.textContent =
 categoryNames[
-String(data.category)
-.toLowerCase()
+selectedCategory
 ]
 ||
-data.category;
+selectedCategory;
 
 
 /* DIFFICULTY */
@@ -604,8 +610,6 @@ answersElement.innerHTML =
 "";
 
 
-/* CREATE ANSWERS */
-
 const answerObjects =
 data.answers.map(
 (answer,index)=>({
@@ -645,7 +649,7 @@ item.text;
 
 button.addEventListener(
 "click",
-function(){
+()=>{
 
 selectAnswer(
 button,
@@ -665,12 +669,13 @@ button
 
 timer =
 setInterval(
-function(){
+()=>{
 
 time--;
 
 timerElement.textContent =
 time;
+
 
 if(
 time <= 0
@@ -706,9 +711,7 @@ isCorrect
 ){
 
 if(selected){
-
 return;
-
 }
 
 selected = true;
@@ -749,7 +752,7 @@ false;
 
 
 /* =========================================
-   DISABLE ANSWERS
+   DISABLE
 ========================================= */
 
 function disableAnswers(){
@@ -786,6 +789,7 @@ data.answers[
 data.correct
 ];
 
+
 document
 .querySelectorAll(
 ".answer"
@@ -815,12 +819,10 @@ button.classList.add(
 
 nextButton.addEventListener(
 "click",
-function(){
+()=>{
 
 if(!selected){
-
 return;
-
 }
 
 currentQuestion++;
@@ -887,35 +889,22 @@ window.location.href =
 ========================================= */
 
 console.log(
-"================================="
+"PREZIQUIZ READY"
 );
 
 console.log(
-"✅ PREZIQUIZ READY"
-);
-
-console.log(
-"📚 Total:",
+"Total:",
 ALL_QUESTIONS.length
 );
 
 console.log(
-"🎯 Category:",
+"Category:",
 selectedCategory
 );
 
 console.log(
-"❓ Available:",
+"Available:",
 availableQuestions.length
-);
-
-console.log(
-"🎲 Quiz:",
-quizQuestions.length
-);
-
-console.log(
-"================================="
 );
 
 
