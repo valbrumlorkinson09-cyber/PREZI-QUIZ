@@ -788,3 +788,501 @@ correct:1
 }
 
 ];
+/* =====================================================
+   ⚽ FOOTBALL — BLOC 3
+   TRANSFERTS • COACHES • STADES • AFRIQUE
+===================================================== */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel entraîneur a dirigé Manchester United pendant la majeure partie des années 1990 et 2000 ?",
+answers:[
+"José Mourinho",
+"Alex Ferguson",
+"Arsène Wenger",
+"Carlo Ancelotti"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel entraîneur est surnommé 'The Special One' ?",
+answers:[
+"Pep Guardiola",
+"José Mourinho",
+"Jürgen Klopp",
+"Antonio Conte"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel entraîneur a remporté la Ligue des champions avec le FC Barcelone en 2009 et 2011 ?",
+answers:[
+"Pep Guardiola",
+"Frank Rijkaard",
+"Luis Enrique",
+"Ronald Koeman"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel entraîneur a remporté la Ligue des champions avec Porto en 2004 ?",
+answers:[
+"José Mourinho",
+"Carlo Ancelotti",
+"Jupp Heynckes",
+"Rafael Benítez"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel entraîneur a remporté la Ligue des champions avec trois clubs différents ?",
+answers:[
+"Pep Guardiola",
+"José Mourinho",
+"Carlo Ancelotti",
+"Jürgen Klopp"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel entraîneur a remporté la Ligue des champions avec le Real Madrid, l'AC Milan et le Bayern Munich ?",
+answers:[
+"Carlo Ancelotti",
+"Jupp Heynckes",
+"Fabio Capello",
+"Vicente del Bosque"
+],
+correct:0
+},
+
+/* =========================
+   💰 TRANSFERTS
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur a rejoint le Paris Saint-Germain en 2017 après avoir joué au FC Barcelone ?",
+answers:[
+"Luis Suárez",
+"Neymar",
+"Philippe Coutinho",
+"Antoine Griezmann"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur a rejoint le Real Madrid en 2009 en provenance de Manchester United ?",
+answers:[
+"Wayne Rooney",
+"Cristiano Ronaldo",
+"David Beckham",
+"Rio Ferdinand"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur a quitté Liverpool pour rejoindre le FC Barcelone en 2018 ?",
+answers:[
+"Sadio Mané",
+"Roberto Firmino",
+"Philippe Coutinho",
+"Mohamed Salah"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur a quitté le Borussia Dortmund pour rejoindre Manchester United en 2021 ?",
+answers:[
+"Erling Haaland",
+"Jadon Sancho",
+"Marco Reus",
+"Christian Pulisic"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur a été transféré de Tottenham au Real Madrid en 2013 pour devenir l'un des joueurs les plus chers de l'époque ?",
+answers:[
+"Luka Modrić",
+"Gareth Bale",
+"Harry Kane",
+"Christian Eriksen"
+],
+correct:1
+},
+
+/* =========================
+   🏟️ STADES
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Dans quelle ville se trouve le stade Camp Nou ?",
+answers:[
+"Madrid",
+"Barcelone",
+"Valence",
+"Séville"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club joue traditionnellement ses matchs à Anfield ?",
+answers:[
+"Liverpool",
+"Everton",
+"Manchester City",
+"Chelsea"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club joue au Santiago Bernabéu ?",
+answers:[
+"Atlético Madrid",
+"Real Madrid",
+"FC Barcelone",
+"Valence"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Dans quelle ville se trouve le stade Maracanã ?",
+answers:[
+"São Paulo",
+"Rio de Janeiro",
+"Brasília",
+"Salvador"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel stade est associé au Bayern Munich ?",
+answers:[
+"Signal Iduna Park",
+"Allianz Arena",
+"Volksparkstadion",
+"BayArena"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel stade londonien a accueilli la finale de la Ligue des champions 2013 ?",
+answers:[
+"Old Trafford",
+"Emirates Stadium",
+"Wembley",
+"Stamford Bridge"
+],
+correct:2
+},
+
+/* =========================
+   🌍 AFRIQUE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays africain a atteint les demi-finales de la Coupe du Monde 2022 ?",
+answers:[
+"Égypte",
+"Maroc",
+"Algérie",
+"Nigeria"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays a remporté la CAN 2021 ?",
+answers:[
+"Sénégal",
+"Égypte",
+"Cameroun",
+"Algérie"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel pays a remporté la CAN 2019 ?",
+answers:[
+"Sénégal",
+"Algérie",
+"Nigeria",
+"Égypte"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur ivoirien est devenu une figure majeure de Chelsea et a remporté la Ligue des champions en 2012 ?",
+answers:[
+"Yaya Touré",
+"Didier Drogba",
+"Salomon Kalou",
+"Wilfried Bony"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel ancien joueur camerounais a remporté deux fois le triplé avec Barcelone et l'Inter Milan ?",
+answers:[
+"Samuel Eto'o",
+"Roger Milla",
+"Rigobert Song",
+"Patrick Mboma"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur libérien a remporté le Ballon d'Or en 1995 ?",
+answers:[
+"George Weah",
+"Abedi Pelé",
+"Roger Milla",
+"Jay-Jay Okocha"
+],
+correct:0
+},
+
+/* =========================
+   🇭🇹 FOOTBALL HAÏTIEN
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"En quelle année Haïti a-t-il participé à sa première Coupe du Monde masculine ?",
+answers:[
+"1966",
+"1970",
+"1974",
+"1978"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel pays a battu Haïti lors de son premier match à la Coupe du Monde 1974 ?",
+answers:[
+"Italie",
+"Pologne",
+"Argentine",
+"Allemagne de l'Ouest"
+],
+correct:3
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur haïtien a marqué le but d'Haïti contre l'Italie à la Coupe du Monde 1974 ?",
+answers:[
+"Emmanuel Sanon",
+"Henri Francillon",
+"Roger Saint-Vil",
+"Guy Renold Jean"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel gardien haïtien est devenu célèbre pour avoir joué contre l'Italie et Dino Zoff en 1974 ?",
+answers:[
+"Henri Francillon",
+"Pierre Bayonne",
+"Roger Saint-Vil",
+"Joseph Marcel"
+],
+correct:0
+},
+
+/* =========================
+   📐 RÈGLES & TACTIQUE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Que se passe-t-il lorsqu'un joueur reçoit un carton rouge ?",
+answers:[
+"Il doit sortir du terrain",
+"Il reçoit un penalty",
+"Il change de poste",
+"Il peut rester jusqu'à la fin"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Combien de mi-temps comporte normalement un match de football ?",
+answers:[
+"2",
+"3",
+"4",
+"5"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quelle est la durée réglementaire d'une mi-temps avant la pause ?",
+answers:[
+"30 minutes",
+"40 minutes",
+"45 minutes",
+"50 minutes"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel terme désigne une passe qui permet directement à un coéquipier de marquer ?",
+answers:[
+"Passe décisive",
+"Relance",
+"Déviation",
+"Pressing"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Dans un système 4-2-3-1, combien de milieux défensifs sont généralement placés devant la défense ?",
+answers:[
+"1",
+"2",
+"3",
+"4"
+],
+correct:1
+},
+
+/* =========================
+   🧤 GARDIENS
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel ancien gardien allemand a remporté le Ballon d'Or en 1963 ?",
+answers:[
+"Oliver Kahn",
+"Lev Yashin",
+"Manuel Neuer",
+"Sepp Maier"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel gardien a remporté le trophée Yashin 2019 ?",
+answers:[
+"Alisson",
+"Manuel Neuer",
+"Thibaut Courtois",
+"Jan Oblak"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel gardien allemand est célèbre pour son rôle de gardien-libéro ?",
+answers:[
+"Oliver Kahn",
+"Manuel Neuer",
+"Marc-André ter Stegen",
+"Bernd Leno"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel gardien est le seul à avoir remporté le Ballon d'Or ?",
+answers:[
+"Gianluigi Buffon",
+"Lev Yashin",
+"Manuel Neuer",
+"Iker Casillas"
+],
+correct:1
+}
+
+];
