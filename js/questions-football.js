@@ -2234,3 +2234,453 @@ question:"Quel entraîneur espagnol a remporté la Premier League avec Mancheste
 answers:["Pep Guardiola","Unai Emery","Luis Enrique","Rafael Benítez"],
 correct:0
 }
+
+/* =====================================================
+   ⚽ PREZIQUIZ — FOOTBALL
+   DERNIER BLOC
+   UCL • EUROPA • LIBERTADORES • AMÉRIQUE • RECORDS
+===================================================== */
+
+/* =========================
+   🏆 EUROPA LEAGUE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club a remporté l'Europa League 2019 ?",
+answers:["Chelsea","Arsenal","Valence","Séville"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club a remporté l'Europa League 2020 ?",
+answers:["Inter Milan","Séville","Manchester United","Shakhtar Donetsk"],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club a remporté l'Europa League 2021 ?",
+answers:["Villarreal","Manchester United","Arsenal","Séville"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club espagnol est particulièrement connu pour ses nombreux titres en Europa League ?",
+answers:["Séville","Valence","Villarreal","Athletic Bilbao"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club a remporté l'Europa League 2016 après avoir battu Liverpool en finale ?",
+answers:["Séville","Villarreal","Atlético Madrid","Napoli"],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club a remporté l'Europa League 2012 après avoir battu l'Athletic Bilbao en finale ?",
+answers:["Atlético Madrid","Séville","Chelsea","Valence"],
+correct:0
+},
+
+/* =========================
+   🌎 COPA LIBERTADORES
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quelle compétition est considérée comme l'équivalent sud-américain de la Ligue des champions ?",
+answers:[
+"Copa América",
+"Copa Libertadores",
+"Copa Sudamericana",
+"Recopa"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club argentin est l'un des clubs les plus titrés de la Copa Libertadores ?",
+answers:[
+"River Plate",
+"Racing Club",
+"San Lorenzo",
+"Lanús"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club brésilien a remporté plusieurs fois la Copa Libertadores et est basé à São Paulo ?",
+answers:[
+"Palmeiras",
+"Flamengo",
+"Grêmio",
+"Corinthians"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club argentin est le grand rival de River Plate ?",
+answers:[
+"Racing Club",
+"Independiente",
+"Boca Juniors",
+"San Lorenzo"
+],
+correct:2
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Comment s'appelle le célèbre derby entre Boca Juniors et River Plate ?",
+answers:[
+"Superclásico",
+"Clásico Paulista",
+"Derby Porteño",
+"Clásico del Río"
+],
+correct:0
+},
+
+/* =========================
+   🇺🇸 MLS / AMÉRIQUE DU NORD
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Dans quel championnat joue actuellement l'Inter Miami ?",
+answers:[
+"MLS",
+"Premier League",
+"La Liga",
+"Liga MX"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur argentin a rejoint l'Inter Miami en 2023 ?",
+answers:[
+"Ángel Di María",
+"Lionel Messi",
+"Paulo Dybala",
+"Lautaro Martínez"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel ancien joueur du FC Barcelone a rejoint Lionel Messi à l'Inter Miami ?",
+answers:[
+"Xavi",
+"Sergio Busquets",
+"Gerard Piqué",
+"Jordi Alba"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel ancien défenseur du FC Barcelone a rejoint l'Inter Miami avec Messi et Busquets ?",
+answers:[
+"Gerard Piqué",
+"Jordi Alba",
+"Carles Puyol",
+"Javier Mascherano"
+],
+correct:1
+},
+
+/* =========================
+   🇧🇷 BRÉSIL
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club brésilien est associé à Neymar au début de sa carrière professionnelle ?",
+answers:[
+"Flamengo",
+"Santos",
+"Palmeiras",
+"Corinthians"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club brésilien est historiquement associé à Pelé ?",
+answers:[
+"Santos",
+"Flamengo",
+"Botafogo",
+"São Paulo"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel club brésilien a remporté la Copa Libertadores 2019 ?",
+answers:[
+"Flamengo",
+"River Plate",
+"Palmeiras",
+"Santos"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club brésilien a remporté la Copa Libertadores 2020, finale jouée en janvier 2021 ?",
+answers:[
+"Flamengo",
+"Palmeiras",
+"Santos",
+"Grêmio"
+],
+correct:1
+},
+
+/* =========================
+   🇦🇷 ARGENTINE
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club argentin est surnommé les Xeneizes ?",
+answers:[
+"River Plate",
+"Boca Juniors",
+"Racing Club",
+"Independiente"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel club argentin est surnommé les Millonarios ?",
+answers:[
+"Boca Juniors",
+"River Plate",
+"San Lorenzo",
+"Racing Club"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel ancien joueur argentin est devenu une légende de Naples ?",
+answers:[
+"Diego Maradona",
+"Gabriel Batistuta",
+"Juan Román Riquelme",
+"Hernán Crespo"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel numéro est devenu emblématique de Diego Maradona avec Naples et l'Argentine ?",
+answers:[
+"7",
+"9",
+"10",
+"11"
+],
+correct:2
+},
+
+/* =========================
+   📈 RECORDS INDIVIDUELS
+========================= */
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur est surnommé 'La Pulga' ?",
+answers:[
+"Cristiano Ronaldo",
+"Lionel Messi",
+"Neymar",
+"Diego Maradona"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"medium",
+question:"Quel joueur portugais est surnommé CR7 ?",
+answers:[
+"Bruno Fernandes",
+"Cristiano Ronaldo",
+"Bernardo Silva",
+"João Félix"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur a remporté le Soulier d'Or de la Coupe du Monde 2022 ?",
+answers:[
+"Kylian Mbappé",
+"Lionel Messi",
+"Olivier Giroud",
+"Julián Álvarez"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"hard",
+question:"Quel joueur a marqué un triplé en finale de Coupe du Monde 2022 ?",
+answers:[
+"Lionel Messi",
+"Kylian Mbappé",
+"Olivier Giroud",
+"Ángel Di María"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel joueur a marqué trois buts en finale de Coupe du Monde 1966 ?",
+answers:[
+"Geoff Hurst",
+"Bobby Charlton",
+"Gary Lineker",
+"Jimmy Greaves"
+],
+correct:0
+},
+
+/* =========================
+   🧠 QUESTIONS TRÈS DIFFICILES
+========================= */
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel pays a remporté la toute première Copa América sous son ancienne appellation en 1916 ?",
+answers:[
+"Argentine",
+"Uruguay",
+"Brésil",
+"Chili"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club français a atteint la finale de la Ligue des champions 2004 ?",
+answers:[
+"Monaco",
+"Marseille",
+"PSG",
+"Lyon"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club allemand a atteint la finale de la Ligue des champions 2012 avant de perdre aux tirs au but contre Chelsea ?",
+answers:[
+"Borussia Dortmund",
+"Bayern Munich",
+"Schalke 04",
+"Bayer Leverkusen"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club italien a perdu la finale de la Ligue des champions 2015 contre le FC Barcelone ?",
+answers:[
+"Juventus",
+"Roma",
+"Napoli",
+"Inter Milan"
+],
+correct:0
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club anglais a perdu la finale de la Ligue des champions 2021 contre Chelsea ?",
+answers:[
+"Liverpool",
+"Manchester City",
+"Manchester United",
+"Arsenal"
+],
+correct:1
+},
+
+{
+category:"football",
+difficulty:"expert",
+question:"Quel club a perdu la finale de la Ligue des champions 2014 contre le Real Madrid après avoir mené 1-0 jusqu'au temps additionnel ?",
+answers:[
+"Atlético Madrid",
+"Juventus",
+"Bayern Munich",
+"Dortmund"
+],
+correct:0
+},
+
+/* =========================
+   🏁 FIN DU BLOC
+========================= */
